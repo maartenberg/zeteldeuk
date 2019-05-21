@@ -1,0 +1,12 @@
+# {{ zeteldeuk_managed }}
+# If a window is closed, renumber remaining windows to fill the gap.
+set -g renumber-windows on
+
+# :wq
+setw mode-keys vi
+
+# Attempt to copy to the system clipboard if not remote.
+if-shell "test -z $SSH_CONNECTION" \
+  "set -s set-clipboard on"
+
+# vim: ft=tmux
