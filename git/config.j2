@@ -1,0 +1,58 @@
+# {{ zeteldeuk_managed }}
+[user]
+    name = {{ vars.user.name }}
+    email = {{ vars.user.email }}
+    {%- if vars.user.gpgkey is defined %}
+    signingkey = {{ vars.user.gpgkey }}
+    {%- endif %}
+
+[color]
+    ui = true
+
+[commit]
+    # Show changes to be committed in commit message editor.
+    verbose = true
+    {%- if vars.user.gpgkey %}
+    gpgsign = true
+    {%- endif %}
+
+[gpg]
+    program = gpg2
+
+[grep]
+    # Implicit -n to all `git grep`s.
+    linenumber = true
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+
+[merge]
+    conflictstyle = diff3
+
+[rebase]
+    # Use single-letter commands by default
+    abbreviateCommands = true
+    # Abort rebase if commit is implicitly dropped and ask for confirmation
+    missingCommitsCheck = error
+
+[rerere]
+    enabled = true
+
+[status]
+    # Show stashed items in `git status`
+    showStash = true
+
+[stash]
+    # Show a patch instead of the stat change on `git stash show`
+    showPatch = true
+
+[submodule]
+    # --recurse-submodules for all
+    recurse = true
+
+[credential "https://git.overleaf.com"]
+    username = maartenberg1@gmail.com
+# vim: ft=gitconfig expandtab
