@@ -41,6 +41,7 @@ def main(
         logging.debug("Template loaded.")
     except jinja2.exceptions.TemplateNotFound:
         logging.critical("Template not found: %s", template_file)
+        return
 
     # Gather variables
     component_name: str = pathlib.Path(template_file).resolve().parent.name
