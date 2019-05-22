@@ -2,6 +2,9 @@
 # If a window is closed, renumber remaining windows to fill the gap.
 set -g renumber-windows on
 
+# More history
+set-option -g history-limit 8192
+
 # :wq
 setw -g mode-keys vi
 bind-key -T copy-mode-vi 'v' send -X begin-selection
