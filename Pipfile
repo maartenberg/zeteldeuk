@@ -9,6 +9,7 @@ mypy = "*"
 [packages]
 jinja2 = "*"
 click = "*"
+pynvim = "*"
 zeteldeuk = {editable = true,path = "./zeteldeuk"}
 
 [requires]
