@@ -35,7 +35,7 @@ def get_environment(
                 with open(path, "r") as varfile:
                     data = json.load(varfile)
 
-                result.update(data)
+                merge_dicts(result, data)
 
             except FileNotFoundError as ex:
                 logging.error("Couldn't open file:")
@@ -50,6 +50,19 @@ def get_environment(
     # Apply overrides
     result.update(overrides)
     return result
+
+
+def merge_dicts(a: Dict, b: dict) -> Dict:
+    """Merge two dictionaries in-place."""
+    for k, v in b.items():
+        if isinstance(v, dict) and k in a:
+            logging.debug("Merging %s", k)
+            merge_dicts(a[k], v)
+        else:
+            logging.debug("Overriding %s = %s", k, v)
+            a[k] = b[k]
+
+    return a
 
 
 other: Dict[str, Any] = {

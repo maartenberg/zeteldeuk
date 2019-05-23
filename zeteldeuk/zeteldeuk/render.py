@@ -13,6 +13,7 @@ from . import variables
 
 @click.command()
 @click.option("--verbose/--silent", "-v")
+@click.option("--dump-environment", is_flag=True)
 @click.option("--export", "-e", "var_overrides", multiple=True)
 @click.option(
     "--var-file",
@@ -25,6 +26,7 @@ from . import variables
 @click.argument("template_file")
 def main(
     verbose: bool,
+    dump_environment: bool,
     var_overrides: List[str],
     var_files: List[pathlib.Path],
     template_file: str,
@@ -60,11 +62,16 @@ def main(
         component_name, [pathlib.Path(f) for f in var_files], overrides
     )
 
+    if dump_environment:
+        import pprint
+        pprint.pprint(env)
+        return
+
     # Render
     result = template.stream(vars=env, **variables.other)
 
     if output_file:
-        with open(output_file, 'w') as fd:
+        with open(output_file, "w") as fd:
             result.dump(fd)
 
     else:
