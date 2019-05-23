@@ -5,6 +5,9 @@ set -g renumber-windows on
 # More history
 set-option -g history-limit 8192
 
+# Choose terminfo with colors
+set -g default-terminal "tmux-256color"
+
 # :wq
 setw -g mode-keys vi
 bind-key -T copy-mode-vi 'v' send -X begin-selection
