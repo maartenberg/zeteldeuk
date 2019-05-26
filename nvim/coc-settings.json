@@ -1,0 +1,23 @@
+{
+    "python.jediEnabled": false,
+    "python.linting.mypyEnabled": true,
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "/usr/bin/black",
+
+    "languageserver": {
+        "haskell": {
+            "command": "hie-wrapper",
+            "rootPatterns": [
+                ".stack.yaml",
+                "cabal.config",
+                "package.yaml"
+            ],
+            "filetypes": [
+                "hs",
+                "lhs",
+                "haskell"
+            ],
+            "initializationOptions": {}
+        }
+    }
+}
