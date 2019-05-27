@@ -2,7 +2,7 @@
 [user]
     name = {{ vars.user.name }}
     email = {{ vars.user.email }}
-    {%- if vars.user.gpgkey is defined %}
+    {%- if vars.user.gpgkey %}
     signingkey = {{ vars.user.gpgkey }}
     {%- endif %}
 

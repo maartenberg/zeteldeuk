@@ -1,6 +1,7 @@
 {
     "user": {
         "name": "Maarten van den Berg",
-        "email": "maarten@channable.com"
+        "email": "maarten@channable.com",
+		"gpgkey": null
     }
 }
