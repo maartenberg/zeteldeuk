@@ -33,4 +33,7 @@ bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
 if-shell "test -z $SSH_CONNECTION" \
   "set -s set-clipboard on"
 
+# Wait shorter for escape, neovim suggested
+set-option -sg escape-time 10
+
 # vim: ft=tmux
