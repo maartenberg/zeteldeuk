@@ -1,5 +1,8 @@
-all:
-	echo "Pass"
+dark:
+	echo 'set bg=dark' > ./lightswitch.vim
+
+light:
+	echo 'set bg=light' > ./lightswitch.vim
 
 install:
 	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

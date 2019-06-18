@@ -1,5 +1,7 @@
 set number relativenumber
 
+source $HOME/.config/nvim/lightswitch.vim
+
 " Python-style tabs
 set tabstop=4
 set shiftwidth=4
