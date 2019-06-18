@@ -6,7 +6,7 @@
     },
     "colors": {
         "primary": {
-            "background": "0x444444",
+            "background": "0x282828",
             "foreground": "0xeeeeee"
         },
         "selection": {
