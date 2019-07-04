@@ -39,15 +39,6 @@ let g:gruvbox_contrast_dark = 'medium'
 let g:gruvbox_contrast_light = 'hard'
 let g:gruvbox_italic = 1
 
-" Trailing space highlighting, taken from
-" <http://vim.wikia.com/wiki/Highlight_unwanted_spaces>
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
-
 " Plugins
 call plug#begin()
 
@@ -56,6 +47,7 @@ Plug 'editorconfig/editorconfig-vim'
 
 " Vim Experience
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+Plug 'scrooloose/nerdcommenter'
 Plug 'wellle/targets.vim'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'morhetz/gruvbox'
@@ -63,7 +55,7 @@ Plug 'morhetz/gruvbox'
 " Languages
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 Plug 'hdima/python-syntax', {'for': 'python' }
-Plug 'LaTeX-Box-Team/LaTeX-Box', { 'for': 'tex' }
+Plug 'lervag/vimtex', { 'for': 'tex' }
 Plug 'thmshrpr/uuagc-syntax-vim', {'for': 'uuagc'}
 Plug 'elmcast/elm-vim', {'for': 'elm'}
 
@@ -84,6 +76,16 @@ let g:pandoc#syntax#codeblocks#embeds#langs = ["python", "bash=sh", "haskell"]
 filetype plugin on
 set grepprg=grep\ -nH\ $*
 let g:tex_comment_nospell=1
+let g:vimtex_compiler_latexmk = {
+    \ 'options': [
+    \   '-pdf',
+    \   '-shell-escape',
+    \   '-interaction=nonstopmode',
+    \   '-synctex=0',
+    \   '-file-line-error',
+    \   '-verbose',
+    \ ],
+    \}
 
 """ NERDtree
 noremap <silent> <leader>n :NERDTreeToggle<CR>
@@ -209,3 +211,13 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+" Trailing space highlighting, taken from
+" <http://vim.wikia.com/wiki/Highlight_unwanted_spaces>
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
