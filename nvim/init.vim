@@ -53,7 +53,7 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'morhetz/gruvbox'
 
 " Languages
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+Plug 'neoclide/coc.nvim', {'tag': '*'}
 Plug 'hdima/python-syntax', {'for': 'python' }
 Plug 'lervag/vimtex', { 'for': 'tex' }
 Plug 'thmshrpr/uuagc-syntax-vim', {'for': 'uuagc'}
@@ -186,7 +186,7 @@ command! -nargs=0 Format :call CocAction('format')
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
 " Show
-"set statusline+=%{coc#status()}
+set statusline=[%n]\ %f\ %m%r%w%q%=%{coc#status()}\ (%l,%c)
 
 " Fix LaTeX LS
 let g:coc_filetype_map = {

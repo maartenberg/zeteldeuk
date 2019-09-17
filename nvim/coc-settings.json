@@ -19,5 +19,13 @@
             ],
             "initializationOptions": {}
         }
-    }
+    },
+
+    "coc.preferences.rootPatterns": [
+        "Pipfile",
+        ".vim",
+        ".git",
+        ".hg",
+        ".projections.json"
+    ]
 }
