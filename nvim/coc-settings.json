@@ -1,9 +1,19 @@
 {
+    "python.venvFolders": [
+        "${workspaceFolder}/.venv",
+        "~/.local/share/virtualenvs",
+        "envs",
+        ".pyenv",
+        ".direnv"
+    ],
+    "python.autoComplete.extraPaths": [
+        "."
+    ],
+    "python.venvPath": "~/.local/share/virtualenvs",
     "python.jediEnabled": false,
     "python.linting.mypyEnabled": true,
     "python.formatting.provider": "black",
-    "python.formatting.blackPath": "/usr/bin/black",
-
+    "python.formatting.blackPath": "black",
     "languageserver": {
         "haskell": {
             "command": "hie-wrapper",
