@@ -58,6 +58,7 @@ Plug 'hdima/python-syntax', {'for': 'python' }
 Plug 'lervag/vimtex', { 'for': 'tex' }
 Plug 'thmshrpr/uuagc-syntax-vim', {'for': 'uuagc'}
 Plug 'elmcast/elm-vim', {'for': 'elm'}
+Plug 'LnL7/vim-nix', {'for': 'nix'}
 
 " Markup / Data
 Plug 'vim-pandoc/vim-pandoc'
