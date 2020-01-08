@@ -51,6 +51,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'wellle/targets.vim'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'morhetz/gruvbox'
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 " Languages
 Plug 'neoclide/coc.nvim', {'tag': '*'}
@@ -227,3 +228,22 @@ autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 expandtab
 
 " Python: default width for Black
 autocmd FileType python setlocal textwidth=88
+
+" C-Backspace == ^W
+inoremap <C-BS> <C-W>
+
+" Firenvim trickery
+au BufEnter github.com_*.txt set filetype=markdown tw=85 bg=light
+let g:firenvim_config = {
+    \ 'globalSettings': {
+        \ 'alt': 'all',
+    \  },
+    \ 'localSettings': {
+        \ '.*': {
+            \ 'cmdline': 'nvim',
+            \ 'priority': 0,
+            \ 'selector': 'textarea',
+            \ 'takeover': 'never',
+        \ },
+    \ }
+\ }
