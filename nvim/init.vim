@@ -222,3 +222,8 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
+" Yaml: 2 spaces for indentation
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 expandtab
+
+" Python: default width for Black
+autocmd FileType python setlocal textwidth=88
