@@ -2,6 +2,11 @@
 
 {
   config = {
+    programs.bat.enable = true;
+    programs.bat.config = {
+      theme = "gruvbox-dark";
+    };
+
     programs.zsh = {
       enable = true;
 
@@ -10,6 +15,8 @@
       # Settings for OMZ's `timer` plugin.
       sessionVariables.TIMER_THRESHOLD = "5";
       sessionVariables.TIMER_FORMAT = "[%d]";
+
+      sessionVariables.MANPAGER = "sh -c 'col -bx | bat -l man -p'";
 
       initExtra = ''
         # Run setup for zsh-nix-shell.
