@@ -94,7 +94,7 @@ in {
           };
         };
 
-        "jedi.executable.command" = "jedi-language-server";
+        "jedi.executable.command" = "${jedi-language-server}/bin/jedi-language-server";
 
         "diagnostic-languageserver.filetypes" = {
           "sh" = "shellcheck";
