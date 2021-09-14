@@ -21,6 +21,14 @@
         # make italic and bold styles use this font as well.
         font = { normal.family = "Rec Mono Duotone"; };
 
+        # Scrollback
+        scrolling = {
+          history = 10000;
+          multiplier = 3;
+        };
+
+        draw_bold_text_with_bright_colors = true;
+
         # Use Numix Dark colors for the terminal.
         colors = {
           primary.background = "0x282828";
