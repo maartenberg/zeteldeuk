@@ -33,9 +33,6 @@
           # Provide Git aliases.
           # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
           "git"
-          # Faster Git completion than the built-in zsh completion.
-          # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gitfast
-          "gitfast"
           # Enable substring search in history with arrow keys.
           # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history-substring-search
           "history-substring-search"
