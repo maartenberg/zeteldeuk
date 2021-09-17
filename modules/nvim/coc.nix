@@ -94,17 +94,19 @@ in {
           };
         };
 
-        "jedi.executable.command" = "${jedi-language-server}/bin/jedi-language-server";
+        "jedi.executable.command" =
+          "${jedi-language-server}/bin/jedi-language-server";
 
         "diagnostic-languageserver.filetypes" = {
-          "sh" = "shellcheck";
           "python" = "mypy";
+          "sh" = "shellcheck";
           "yaml" = "yamllint";
         };
 
         "diagnostic-languageserver.formatFiletypes" = {
-          "python" = [ "black" "isort" ];
           "nix" = [ "nixfmt" ];
+          "python" = [ "black" "isort" ];
+          "tf" = [ "tffmt" ];
         };
       };
     };
