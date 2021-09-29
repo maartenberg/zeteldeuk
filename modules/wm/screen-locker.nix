@@ -1,6 +1,14 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
+  options = {
+    services.screen-locker.i3lockPath = lib.mkOption {
+      type = lib.types.str;
+      default = "${pkgs.i3lock}/bin/i3lock";
+      description = "Path to i3lock binary.";
+    };
+  };
+
   config = {
     services.screen-locker.enable = true;
 
@@ -40,7 +48,7 @@
             trap kill_i3lock TERM INT
 
             # we have to make sure the locker does not inherit a copy of the lock fd
-            ${pkgs.i3lock}/bin/i3lock $i3lock_options {XSS_SLEEP_LOCK_FD}<&-
+            ${config.services.screen-locker.i3lockPath} $i3lock_options {XSS_SLEEP_LOCK_FD}<&-
 
             # now close our fd (only remaining copy) to indicate we're ready to sleep
             exec {XSS_SLEEP_LOCK_FD}<&-
@@ -50,7 +58,7 @@
             done
         else
             trap 'kill %%' TERM INT
-            ${pkgs.i3lock}/bin/i3lock -n $i3lock_options &
+            ${config.services.screen-locker.i3lockPath} -n $i3lock_options &
             wait
         fi
 
