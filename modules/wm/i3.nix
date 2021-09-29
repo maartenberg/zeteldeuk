@@ -75,6 +75,8 @@
           "${mod}+Pause" = ''mode "System"'';
           "${mod}+Shift+f" = "fullscreen toggle global";
 
+          "${mod}+Shift+F1" = "exec firefox";
+
           "XF86AudioMute" = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
           "XF86AudioRaiseVolume" =
             "exec pactl set-sink-volume @DEFAULT_SINK@ +2%";
