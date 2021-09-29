@@ -4,6 +4,9 @@
   config = {
     services.dunst.enable = true;
 
+    systemd.user.services.dunst.Service.Restart = "always";
+    systemd.user.services.dunst.Service.StartLimitIntervalSec = "5s";
+
     services.dunst.settings = let bg = "#2d2d2d";
     in {
       global = {
