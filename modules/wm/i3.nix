@@ -156,12 +156,12 @@
           workspace ${toString space} output ${monitor}
         '';
 
-        primaryMonitor = "DisplayPort-0";
+        primaryMonitor = "0";
         primaryWorkspaces = lib.lists.range 1 10;
         primaryAssigns = lib.strings.concatMapStrings (assign primaryMonitor)
           primaryWorkspaces;
 
-        secondaryMonitor = "DisplayPort-1";
+        secondaryMonitor = "1";
         secondaryWorkspaces = lib.lists.range 11 20;
         secondaryAssigns =
           lib.strings.concatMapStrings (assign secondaryMonitor)
