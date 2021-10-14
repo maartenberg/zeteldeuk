@@ -44,22 +44,6 @@
       pkgs.lib.mkForce "~/.nix-profile/bin/nixGL alacritty";
 
     programs.autorandr.enable = true;
-    programs.autorandr.hooks.preswitch = {
-      "rename" = ''
-        set -x
-        env | grep AUTORANDR
-        IFS=':' read -a outputs <<< "$AUTORANDR_MONITORS"
-
-        for index in "''${!outputs[@]}"; do
-          output_name="''${outputs[index]}"
-          echo "making monitor $output_name index $index"
-          # xrandr --setmonitor "$index" auto "$output_name"
-        done
-
-        # i3-msg reload
-        set +x
-      '';
-    };
 
     systemd.user.systemctlPath = "/bin/systemctl";
 
