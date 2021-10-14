@@ -49,6 +49,15 @@
 
     services.screen-locker.i3lockPath = "/usr/bin/i3lock";
 
+    services.picom.package = let
+      wrapper = pkgs.writeShellScriptBin "picom" ''
+        ~/.nix-profile/bin/nixGL ${pkgs.picom}/bin/picom $@
+      '';
+    in pkgs.symlinkJoin {
+      name = "picom-nixGL";
+      paths = [ wrapper pkgs.picom ];
+    };
+
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
 
