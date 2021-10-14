@@ -58,6 +58,12 @@
       paths = [ wrapper pkgs.picom ];
     };
 
+    xsession.windowManager.i3.config.startup = [{
+      command =
+        "/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1";
+      notification = false;
+    }];
+
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
 
