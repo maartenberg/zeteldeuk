@@ -66,6 +66,6 @@
       '';
     in "${script}";
 
-    services.screen-locker.xssLockExtraOptions = [ "--transfer-sleep-lock" ];
+    services.screen-locker.xss-lock.extraOptions = [ "--transfer-sleep-lock" ];
   };
 }
