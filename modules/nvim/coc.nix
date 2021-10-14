@@ -72,7 +72,7 @@ in {
     ];
 
     programs.neovim.extraPackages =
-      [ jedi-language-server pkgs.haskell-language-server ];
+      [ jedi-language-server pkgs.haskell-language-server pkgs.yamllint ];
 
     # Write CoC settings file.
     home.file."coc-settings.json" = {
@@ -96,6 +96,12 @@ in {
 
         "jedi.executable.command" =
           "${jedi-language-server}/bin/jedi-language-server";
+
+        "diagnostic-languageserver.mergeConfig" = true;
+
+        "diagnostic-languageserver.linters" = {
+          yamllint = { args = [ "-c" ".yamllint" "-f" "parsable" "-" ]; };
+        };
 
         "diagnostic-languageserver.filetypes" = {
           "python" = "mypy";
