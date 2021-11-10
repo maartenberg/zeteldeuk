@@ -20,11 +20,13 @@
       feh
       mpv-with-scripts
       niv
+      nix-output-monitor
       nix-tree
       overmind
       playerctl
       ripgrep
       rofi
+      vscode
     ];
 
     targets.genericLinux.enable = true;
