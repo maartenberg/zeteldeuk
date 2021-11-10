@@ -9,6 +9,8 @@
 
     programs.zsh = {
       enable = true;
+      enableSyntaxHighlighting = true;
+      enableAutosuggestions = true;
 
       defaultKeymap = "viins";
 
