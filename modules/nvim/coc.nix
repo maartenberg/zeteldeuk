@@ -4,49 +4,24 @@ let
   # Extra packages for Jedi setup.
   ps = pkgs.python3Packages;
 
-  jedi_0_18_0 = ps.jedi.overrideAttrs (old: {
-    version = "0.18.0";
-    src = ps.fetchPypi {
-      pname = "jedi";
-      version = "0.18.0";
-      sha256 =
-        "92550a404bad8afed881a137ec9a461fed49eca661414be45059329614ed0707";
-    };
-  });
-
   jedi-language-server = ps.buildPythonPackage rec {
     pname = "jedi-language-server";
-    version = "0.34.3";
+    version = "0.34.8";
 
     src = ps.fetchPypi {
       inherit pname version;
       sha256 =
-        "103296591fdfe8a8dc6277f54d31ef4ddf41cee81e7af2cc04b2b1f66349cf6a";
+        "8cd2d5cc453ce3314c1cf4001d9590ae259b20b4ad6481ea2648a43162ba1566";
     };
 
     propagatedBuildInputs = [
       ps.click
-      jedi_0_18_0
-      pygls_0_11_2
+      ps.jedi
+      ps.pygls
       ps.cached-property
       docstring-to-markdown
     ];
   };
-
-  # Version in Nixpkgs is at 0.9.2, jedi-language-server requires a newer one.
-  pygls_0_11_2 = ps.pygls.overridePythonAttrs (oldAttrs: rec {
-    version = "0.11.2";
-
-    src = ps.fetchPypi {
-      pname = "pygls";
-      inherit version;
-
-      sha256 =
-        "1ade26fc9cf0d7c0700fa5430e8dc8411b1108d1eb21565adbe480b64f721a84";
-    };
-
-    propagatedBuildInputs = [ ps.setuptools-scm ps.typeguard ps.pydantic ];
-  });
 
   # Not in Nixpkgs, required by jedi-language-server.
   docstring-to-markdown = ps.buildPythonPackage rec {
@@ -67,7 +42,7 @@ in {
 
     # Required to set up Jedi, HLS:
     programs.neovim.extraPython3Packages = ps: [
-      jedi_0_18_0
+      ps.jedi
       jedi-language-server
     ];
 
