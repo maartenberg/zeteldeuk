@@ -58,7 +58,6 @@
 
     programs.firefox.enable = true;
 
-    services.pasystray.enable = true;
     services.pulseeffects.enable = true;
     services.pulseeffects.package = pkgs.pulseeffects-legacy;
 

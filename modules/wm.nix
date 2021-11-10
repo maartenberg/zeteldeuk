@@ -11,6 +11,8 @@
     programs.rofi.theme = "gruvbox-dark";
     programs.rofi.font = "Rec Mono Duotone 14";
 
+    services.pasystray.enable = true;
+
     services.picom = {
       enable = true;
       backend = "glx";
