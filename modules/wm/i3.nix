@@ -73,6 +73,7 @@
           "${mod}+b" = "border toggle";
           "${mod}+Escape" = ''mode "RAW"'';
           "${mod}+Pause" = ''mode "System"'';
+          "${mod}+Print" = ''mode "PrintScreen"'';
           "${mod}+Shift+f" = "fullscreen toggle global";
 
           "${mod}+Shift+F1" = "exec firefox";
@@ -105,6 +106,17 @@
               ''exec ${pkgs.systemd}/bin/systemctl poweroff; mode "default"'';
             "Shift+r" =
               ''exec ${pkgs.systemd}/bin/systemctl reboot; mode "default"'';
+          };
+          "PrintScreen" = let
+            maimCommand = args: ''
+              exec "${pkgs.maim}/bin/maim --hidecursor ${args} | tee ~/Pictures/Screenshots/$(date -Iseconds).png | xclip -sel clipboard -t image/png"
+            '';
+          in {
+            "Escape" = ''mode "default"'';
+            "Return" = ''mode "default"'';
+
+            "s" = maimCommand "--select";
+            "a" = maimCommand "--window=root";
           };
         });
 
