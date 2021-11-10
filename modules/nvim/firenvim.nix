@@ -9,8 +9,8 @@ in {
   config = mkIf cfg.enable {
     programs.neovim.plugins = [{
       plugin = let
-        version = "0.2.8";
-        hash = "02bb7zhczv588scp0l893h1vh5nx10afrykwcb7haz062d9p13vr";
+        version = "0.2.10";
+        hash = "07ynw0h59jmsp62iiw7vl98hximc0vv6ymsvrph682x8y7klqldq";
 
       in pkgs.vimUtils.buildVimPluginFrom2Nix {
         pname = "firenvim";
