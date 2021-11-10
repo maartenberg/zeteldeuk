@@ -151,7 +151,7 @@
           position = "bottom";
           hiddenState = null;
 
-          trayOutput = "primary";
+          trayOutput = "0";
           workspaceButtons = true;
           workspaceNumbers = true;
 
