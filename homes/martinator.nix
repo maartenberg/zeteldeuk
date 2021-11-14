@@ -33,8 +33,6 @@
       texlive.combined.scheme-full
       thunderbird
 
-      jetbrains.clion
-
       libnotify
       wayland
       pcmanfm
