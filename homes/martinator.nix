@@ -92,6 +92,14 @@
       "HDMI-A-0".enable = false;
     };
 
+    programs.autorandr.profiles.default.hooks.preswitch = ''
+      xrandr --setmonitor 0 auto DisplayPort-0
+      sleep 3
+      xrandr --setmonitor 1 auto DisplayPort-1
+      sleep 3
+      i3-msg reload
+    '';
+
     # Yubico U2F keys are untracked
     # home.file.".config/Yubico/u2f_keys" = {
     #   text = ''
