@@ -9,10 +9,16 @@
         terminal = "alacritty";
         modifier = "Mod4";
 
-        startup = [{
-          command = "autorandr -c";
-          notification = false;
-        }];
+        startup = [
+          {
+            command = "setxkbmap -option compose:rwin";
+            notification = false;
+          }
+          {
+            command = "autorandr -c";
+            notification = false;
+          }
+        ];
 
         colors.focused.border = "#444444";
         colors.focused.background = "#444444";
