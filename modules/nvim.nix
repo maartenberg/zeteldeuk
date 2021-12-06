@@ -85,6 +85,8 @@
 
         set backup backupdir=~/.local/share/nvim/backup,.
 
+        set scrolloff=4
+
         " === Autocmds ===
         " Trailing space highlighting, taken from
         " <http://vim.wikia.com/wiki/Highlight_unwanted_spaces>
@@ -122,6 +124,27 @@
       '';
 
       extraPackages = [ pkgs.nixfmt ];
+    };
+
+    home.file.ideavimrc = {
+      target = ".ideavimrc";
+      text = ''
+        set number relativenumber
+        set tabstop=4 shiftwidth=4 expandtab
+        set scrolloff=4
+
+        autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 expandtab
+
+        autocmd FileType python setlocal textwidth=88
+
+        nnoremap <silent> <BS> :nohlsearch<CR>
+
+        map <leader>s <Action>(SelectInProjectView)
+        map <leader>b <Action>(ToggleLineBreakpoint)
+        map <leader>o <Action>(FileStructurePopup)
+
+        set NERDTree
+      '';
     };
   };
 }
