@@ -35,7 +35,7 @@
 
     programs.zsh.shellAliases = {
       nrc = "nix run -c ";
-      nsh = "nix run -c $SHELL";
+      nsh = ''nix run -c env IN_NIX_SHELL=1 NIX_SHELL_NAME="''${NIX_SHELL_NAME:-}-$(basename "$PWD")" $SHELL'' ;
     };
 
     # programs.git.userEmail is untracked.
