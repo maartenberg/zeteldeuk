@@ -34,8 +34,6 @@
       "$HOME/.nix-defexpr/channels\${NIX_PATH:+:}$NIX_PATH";
 
     programs.zsh.shellAliases = {
-      gssh = "gcloud compute ssh";
-      gscp = "gcloud compute scp";
       nrc = "nix run -c ";
       nsh = "nix run -c $SHELL";
     };
