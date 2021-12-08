@@ -74,7 +74,18 @@
           '';
         }
         vim-toml
-        # vim-jinja2-syntax
+
+        {
+          plugin = vim-better-whitespace;
+          config = ''
+            let g:strip_whitespace_on_save=1
+            let g:strip_whitelines_at_eof=1
+            let g:show_spaces_that_precede_tabs=1
+
+            nnoremap ]w :NextTrailingWhitespace<CR>
+            nnoremap [w :PrevTrailingWhitespace<CR>
+          '';
+        }
       ];
       extraConfig = ''
         " === Options ===
@@ -88,15 +99,6 @@
         set scrolloff=4
 
         " === Autocmds ===
-        " Trailing space highlighting, taken from
-        " <http://vim.wikia.com/wiki/Highlight_unwanted_spaces>
-        highlight ExtraWhitespace ctermbg=red guibg=red
-        match ExtraWhitespace /\s\+$/
-        autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-        autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-        autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-        autocmd BufWinLeave * call clearmatches()
-
         " Yaml: 2 spaces for indentation
         autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 expandtab
 
