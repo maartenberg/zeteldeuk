@@ -7,6 +7,8 @@
     xsession.enable = true;
     xsession.numlock.enable = true;
 
+    home.keyboard.options = [ "compose:rwin" ];
+
     programs.rofi.enable = true;
     programs.rofi.theme = "gruvbox-dark";
     programs.rofi.font = "Rec Mono Duotone 14";

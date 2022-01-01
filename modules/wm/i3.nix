@@ -11,10 +11,6 @@
 
         startup = [
           {
-            command = "setxkbmap -option compose:rwin";
-            notification = false;
-          }
-          {
             command = "autorandr -c";
             notification = false;
           }
