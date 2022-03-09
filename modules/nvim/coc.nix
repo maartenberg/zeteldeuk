@@ -1,41 +1,6 @@
 { config, pkgs, mkMerge, ... }:
 
-let
-  # Extra packages for Jedi setup.
-  ps = pkgs.python3Packages;
-
-  jedi-language-server = ps.buildPythonPackage rec {
-    pname = "jedi-language-server";
-    version = "0.34.8";
-
-    src = ps.fetchPypi {
-      inherit pname version;
-      sha256 =
-        "8cd2d5cc453ce3314c1cf4001d9590ae259b20b4ad6481ea2648a43162ba1566";
-    };
-
-    propagatedBuildInputs = [
-      ps.click
-      ps.jedi
-      ps.pygls
-      ps.cached-property
-      docstring-to-markdown
-    ];
-  };
-
-  # Not in Nixpkgs, required by jedi-language-server.
-  docstring-to-markdown = ps.buildPythonPackage rec {
-    pname = "docstring-to-markdown";
-    version = "0.9";
-
-    src = ps.fetchPypi {
-      inherit pname version;
-      sha256 =
-        "0b810e6e16737d2d0ede6182f66f513f814a11fad1222e645fbc14acde78e171";
-    };
-  };
-
-in {
+{
   config = {
     # Required to use CoC.
     programs.neovim.withNodeJs = true;
@@ -43,11 +8,11 @@ in {
     # Required to set up Jedi, HLS:
     programs.neovim.extraPython3Packages = ps: [
       ps.jedi
-      jedi-language-server
+      ps.jedi-language-server
     ];
 
     programs.neovim.extraPackages =
-      [ jedi-language-server pkgs.haskell-language-server pkgs.yamllint ];
+      [ pkgs.haskell-language-server pkgs.yamllint ];
 
     # Write CoC settings file.
     home.file."coc-settings.json" = {
@@ -70,7 +35,7 @@ in {
         };
 
         "jedi.executable.command" =
-          "${jedi-language-server}/bin/jedi-language-server";
+          "${pkgs.python3.pkgs.jedi-language-server}/bin/jedi-language-server";
 
         "diagnostic-languageserver.mergeConfig" = true;
 
@@ -223,12 +188,12 @@ in {
           coc-jedi = pkgs.nodePackages.coc-python.override rec {
             name = "coc-jedi";
             packageName = "coc-jedi";
-            version = "0.29.3";
+            version = "0.30.1";
 
             src = pkgs.fetchurl {
               url =
                 "https://registry.npmjs.org/coc-jedi/-/coc-jedi-${version}.tgz";
-              sha256 = "1wrqzldxg74qi90h60r6cvjy1bi3frr8izpdg8jg3s7i71b021r4";
+              sha256 = "15njcpp4wkav5zv0bd3p5nrda2l1nk02lcf2bji68kas796a2qy2";
             };
           };
         in pkgs.vimUtils.buildVimPluginFrom2Nix {
