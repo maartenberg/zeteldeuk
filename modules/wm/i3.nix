@@ -1,6 +1,18 @@
 { config, pkgs, lib, ... }:
 
 {
+  options = {
+    xsession.windowManager.i3.x-barmode = lib.mkOption {
+      type = lib.types.str;
+      default = "dock";
+    };
+
+    xsession.windowManager.i3.x-trayOutput = lib.mkOption {
+      type = lib.types.str;
+      default = "0";
+    };
+  };
+
   config = {
     xsession.windowManager.i3 = {
       enable = true;
@@ -149,11 +161,11 @@
           statusCommand = "i3status";
           extraConfig = "";
 
-          mode = "dock";
+          mode = config.xsession.windowManager.i3.x-barmode;
           position = "bottom";
           hiddenState = null;
 
-          trayOutput = "0";
+          trayOutput = config.xsession.windowManager.i3.x-trayOutput;
           workspaceButtons = true;
           workspaceNumbers = true;
 
