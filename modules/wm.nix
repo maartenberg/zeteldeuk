@@ -40,6 +40,9 @@
         package = pkgs.numix-icon-theme;
         name = "Numix";
       };
+      gtk3.extraConfig = {
+        gtk-application-prefer-dark-theme = 1;
+      };
     };
   };
 }
