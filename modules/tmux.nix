@@ -38,6 +38,8 @@
       # Attempt to copy to the system clipboard if not remote.
       if-shell "test -z $SSH_CONNECTION" \
         "set -s set-clipboard on"
+
+      set -g mouse on
     '';
   };
 }
