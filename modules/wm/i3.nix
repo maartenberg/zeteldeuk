@@ -23,7 +23,7 @@
 
         startup = [
           {
-            command = "autorandr -c";
+            command = "autorandr -c --default horizontal";
             notification = false;
           }
         ];
@@ -89,6 +89,8 @@
           "${mod}+Pause" = ''mode "System"'';
           "${mod}+Print" = ''mode "PrintScreen"'';
           "${mod}+Shift+f" = "fullscreen toggle global";
+
+          "${mod}+Shift+x" = "move workspace to output next";
 
           "${mod}+Shift+F1" = "exec firefox";
 
@@ -176,27 +178,6 @@
           };
         }];
       };
-
-      extraConfig = let
-        assign = monitor: space: ''
-          workspace ${toString space} output ${monitor}
-        '';
-
-        primaryMonitor = "0";
-        primaryWorkspaces = lib.lists.range 1 10;
-        primaryAssigns = lib.strings.concatMapStrings (assign primaryMonitor)
-          primaryWorkspaces;
-
-        secondaryMonitor = "1";
-        secondaryWorkspaces = lib.lists.range 11 20;
-        secondaryAssigns =
-          lib.strings.concatMapStrings (assign secondaryMonitor)
-          secondaryWorkspaces;
-
-      in ''
-        ${primaryAssigns}
-        ${secondaryAssigns}
-      '';
     };
 
     programs.i3status.enable = true;
