@@ -12,50 +12,24 @@
       global = {
         font = "Rec Mono Duotone 11";
 
-        markup = true;
-        plain_text = false;
-        format = ''
-          <b>%s</b>
-          %b'';
-
-        sort = false;
-        indicate_hidden = true;
+        markup = "full";
 
         alignment = "center";
 
-        bounce_freq = 0;
         show_age_threshold = -1;
-        word_wrap = true;
-        ignore_newline = false;
-
-        stack_duplicates = true;
         hide_duplicate_count = true;
 
-        geometry = "300x50-15+49";
         shrink = true;
-
-        transparency = 10;
 
         idle_threshold = 60;
 
         monitor = 0;
         follow = "none";
 
-        sticky_history = true;
-        show_indicators = true;
-
         line_height = 3;
-        separator_height = 2;
-        padding = 6;
-        horizontal_padding = 6;
-
-        separator_color = "frame";
-        frame_width = 3;
 
         background = bg;
-      };
 
-      shortcuts = {
         close = "ctrl+space";
         close_all = "ctrl+shift+space";
         history = "ctrl+grave";
