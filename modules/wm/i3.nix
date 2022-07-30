@@ -14,6 +14,13 @@
   };
 
   config = {
+    # Allow using programs bound to hotkeys from terminal
+    home.packages = [
+      pkgs.brightnessctl
+      pkgs.maim
+      pkgs.playerctl
+    ];
+
     xsession.windowManager.i3 = {
       enable = true;
       config = rec {
@@ -100,8 +107,13 @@
           "XF86AudioLowerVolume" =
             "exec pactl set-sink-volume @DEFAULT_SINK@ -2%";
           "XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
+          "${mod}+XF86AudioMute" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
           "XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
+          "${mod}+XF86AudioLowerVolume" = "exec ${pkgs.playerctl}/bin/playerctl previous";
           "XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
+          "${mod}+XF86AudioRaiseVolume" = "exec ${pkgs.playerctl}/bin/playerctl next";
+          "XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl --quiet set 5%-";
+          "XF86MonBrightnessUp"   = "exec ${pkgs.brightnessctl}/bin/brightnessctl --quiet set +5%";
         } // builtins.listToAttrs (switchToSecondaries ++ moveToSecondaries));
 
         modes = let mod = config.xsession.windowManager.i3.config.modifier;
