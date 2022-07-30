@@ -115,13 +115,13 @@
               exec ${pkgs.systemd}/bin/loginctl lock-session; mode "default"'';
             "e" = "exit";
             "h" =
-              ''exec ${pkgs.systemd}/bin/systemctl hibernate; mode "default"'';
+              ''exec ${config.systemd.user.systemctlPath} hibernate; mode "default"'';
             "s" =
-              ''exec ${pkgs.systemd}/bin/systemctl suspend; mode "default"'';
+              ''exec ${config.systemd.user.systemctlPath} suspend; mode "default"'';
             "Shift+s" =
-              ''exec ${pkgs.systemd}/bin/systemctl poweroff; mode "default"'';
+              ''exec ${config.systemd.user.systemctlPath} poweroff; mode "default"'';
             "Shift+r" =
-              ''exec ${pkgs.systemd}/bin/systemctl reboot; mode "default"'';
+              ''exec ${config.systemd.user.systemctlPath} reboot; mode "default"'';
           };
           "PrintScreen" = let
             maimCommand = args: ''
