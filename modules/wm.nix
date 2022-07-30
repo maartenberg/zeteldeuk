@@ -20,11 +20,11 @@
       backend = "glx";
       vSync = true;
 
-      extraOptions = ''
+      settings = {
         unredir-if-possible = true;
         vsync-use-glfinish = true;
         no-fading-openclose = true;
-      '';
+      };
     };
 
     # Ricing
