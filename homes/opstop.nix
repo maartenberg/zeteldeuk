@@ -109,6 +109,20 @@
     programs.direnv.enable = true;
     services.lorri.enable = true;
 
+    programs.neovim.plugins = [
+      {
+        plugin = pkgs.vimPlugins.vim-terraform;
+        config = ''
+          let g:terraform_align = 1
+          let g:terraform_fold_sections = 1
+          let g:hcp_align = 1
+          let g:hcl_fold_sections = 1
+
+          autocmd FileType terraform setlocal formatprg=terraform\ fmt\ -
+        '';
+      }
+    ];
+
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
 
