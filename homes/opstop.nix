@@ -16,6 +16,7 @@
     home.packages = with pkgs; [
       mpv-with-scripts
       pavucontrol
+      signal-desktop
       spotify
       teams
       zotero
@@ -24,6 +25,7 @@
 
       black
       cachix
+      fd
       feh
       gron
       jq
