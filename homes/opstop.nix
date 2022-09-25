@@ -47,6 +47,8 @@
     nix.settings = {
       experimental-features = ["flakes" "nix-command"];
     };
+    nixpkgs.config.allowUnfree = true;
+
     programs.zsh.shellAliases = {
       nrc = "nix run -c ";
       nsh = ''nix run -c env IN_NIX_SHELL=1 NIX_SHELL_NAME="''${NIX_SHELL_NAME:-}-$(basename "$PWD")" $SHELL'' ;
