@@ -43,12 +43,13 @@
             text=True,
           )
 
-          while True:
-            try:
-              line = msg.stdout.readline()
-              subprocess.run(["autorandr", "-c", "--default", "horizontal"])
-            except EOFError:
-              break
+          try:
+            while True:
+              try:
+                line = msg.stdout.readline()
+                subprocess.run(["autorandr", "-c", "--default", "horizontal"])
+              except EOFError:
+                break
 
           finally:
             msg.kill()
