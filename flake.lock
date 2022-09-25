@@ -1,5 +1,17 @@
 {
   "nodes": {
+    "consul-tunnels": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-iBEFvUU1UJepbfh79SqIh+Q6NYGexI47OlVpcHA18aI=",
+        "type": "file",
+        "url": "file:///home/maarten/.config/nixpkgs/consul-tunnels.nix"
+      },
+      "original": {
+        "type": "file",
+        "url": "file:///home/maarten/.config/nixpkgs/consul-tunnels.nix"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -39,6 +51,7 @@
     },
     "root": {
       "inputs": {
+        "consul-tunnels": "consul-tunnels",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "untracked": "untracked"
@@ -47,7 +60,7 @@
     "untracked": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-lYQkYWSwvImQHZ83MTEdxL83Ixz+XjzkzprUxQIfVwM=",
+        "narHash": "sha256-jg2yFoqkwdOwjxA1U5ighkTDtQJN7pHXxcv7PYYwRys=",
         "type": "file",
         "url": "file:///home/maarten/.config/nixpkgs/home-untracked.nix"
       },
