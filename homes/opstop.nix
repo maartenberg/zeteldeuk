@@ -43,6 +43,10 @@
     programs.zsh.sessionVariables.NIX_PATH =
       "$HOME/.nix-defexpr/channels\${NIX_PATH:+:}$NIX_PATH";
 
+    nix.package = pkgs.nix;
+    nix.settings = {
+      experimental-features = ["flakes" "nix-command"];
+    };
     programs.zsh.shellAliases = {
       nrc = "nix run -c ";
       nsh = ''nix run -c env IN_NIX_SHELL=1 NIX_SHELL_NAME="''${NIX_SHELL_NAME:-}-$(basename "$PWD")" $SHELL'' ;
