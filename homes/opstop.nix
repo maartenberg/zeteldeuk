@@ -106,6 +106,9 @@
       interval = "15m";
     };
 
+    programs.direnv.enable = true;
+    services.lorri.enable = true;
+
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
 
