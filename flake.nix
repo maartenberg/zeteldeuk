@@ -8,9 +8,14 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    untracked = {
+      type = "file";
+      url = "file:///home/maarten/.config/nixpkgs/home-untracked.nix";
+      flake = false;
+    };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, untracked, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -20,6 +25,7 @@
 
         modules = [
           ./homes/opstop.nix
+          untracked
         ];
       };
     };

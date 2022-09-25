@@ -9,7 +9,7 @@
     ../modules/wm.nix
     ../modules/wm/workspace-wrangler.nix
     ../modules/nvim.nix
-    ~/.config/nixpkgs/home-untracked.nix
+    # ~/.config/nixpkgs/home-untracked.nix
   ];
 
   config = {
