@@ -58,7 +58,11 @@
 
     xsession.windowManager.i3.x-barmode = "hide";
     xsession.windowManager.i3.x-trayOutput = "eDP-1-1";
-    xsession.windowManager.i3.x-primaryMonitors = [ "DP-1-1" "DP-1-2" "DP-1-3" ];
+    xsession.windowManager.i3.x-primaryMonitors = [
+      "DP-1-1" "DP-1-1-1" "DP-1-1-2" "DP-1-1-3"
+      "DP-1-2" "DP-1-2-1" "DP-1-2-2" "DP-1-2-3"
+      "DP-1-3" "DP-1-3-1" "DP-1-3-2" "DP-1-3-3"
+    ];
     xsession.windowManager.i3.x-secondaryMonitor = "eDP-1-1";
 
     programs.i3status.modules."battery all".enable = pkgs.lib.mkForce true;
