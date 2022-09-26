@@ -48,11 +48,6 @@
       };
 
       plugins = [
-        # Default to using `zsh` as the shell for `nix-shell`.
-        {
-          name = "nix-shell";
-          src = "${pkgs.zsh-nix-shell}/share/zsh-nix-shell";
-        }
         # Provide Nix completions.
         {
           name = "nix";
