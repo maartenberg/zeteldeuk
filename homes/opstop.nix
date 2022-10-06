@@ -14,7 +14,7 @@
 
   config = {
     home.packages = with pkgs; [
-      mpv-with-scripts
+      mpv
       pavucontrol
       signal-desktop
       spotify
