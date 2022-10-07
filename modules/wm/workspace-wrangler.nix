@@ -34,9 +34,27 @@
         #!/usr/bin/env python3
 
         import os
+        import signal
         import subprocess
+        from typing import Any
 
-        if __name__ == '__main__':
+        SUSPENDED: bool = False
+
+
+        def suspend_handler(_signal: Any, _stack: Any) -> None:
+          global SUSPENDED
+          SUSPENDED = not SUSPENDED
+
+          if SUSPENDED:
+            subprocess.run(["notify-send", "autoautorandr suspended."])
+          else:
+            subprocess.run(["autorandr", "-c", "--default", "horizontal"])
+            subprocess.run(["notify-send", "autoautorandr resumed."])
+
+
+        if __name__ == "__main__":
+          signal.signal(signal.SIGUSR1, suspend_handler)
+
           msg = subprocess.Popen(
             ["i3-msg", "--monitor", "-t", "subscribe", '["output"]'],
             stdout=subprocess.PIPE,
@@ -44,10 +62,12 @@
           )
 
           try:
+            assert msg.stdout is not None
             while True:
               try:
                 line = msg.stdout.readline()
-                subprocess.run(["autorandr", "-c", "--default", "horizontal"])
+                if not SUSPENDED:
+                  subprocess.run(["autorandr", "-c", "--default", "horizontal"])
               except EOFError:
                 break
 
@@ -56,6 +76,10 @@
             msg.communicate()
       '';
     };
+
+    home.packages = [
+      pkgs.arandr
+    ];
 
     xsession.windowManager.i3.config.startup = [
       {

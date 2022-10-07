@@ -81,6 +81,7 @@
         keybindings = let
           mod = config.xsession.windowManager.i3.config.modifier;
           secondaries = lib.lists.range 11 20;
+          tertiaries = lib.lists.range 21 30;
           switchToSecondaries = map (num: {
             name = "${mod}+Mod1+${toString (lib.trivial.mod num 10)}";
             value = "workspace number ${toString num}";
@@ -89,6 +90,14 @@
             name = "${mod}+Mod1+Shift+${toString (lib.trivial.mod num 10)}";
             value = "move container to workspace number ${toString num}";
           }) secondaries;
+          switchToTertiaries = map (num: {
+            name = "${mod}+Control+${toString (lib.trivial.mod num 10)}";
+            value = "workspace number ${toString num}";
+          }) tertiaries;
+          moveToTertiaries = map (num: {
+            name = "${mod}+Control+Shift+${toString (lib.trivial.mod num 10)}";
+            value = "move container to workspace number ${toString num}";
+          }) tertiaries;
 
         in lib.mkOptionDefault ({
           "${mod}+b" = "border toggle";
@@ -114,7 +123,14 @@
           "${mod}+XF86AudioRaiseVolume" = "exec ${pkgs.playerctl}/bin/playerctl next";
           "XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl --quiet set 5%-";
           "XF86MonBrightnessUp"   = "exec ${pkgs.brightnessctl}/bin/brightnessctl --quiet set +5%";
-        } // builtins.listToAttrs (switchToSecondaries ++ moveToSecondaries));
+          "${mod}+p" = "exec pkill --signal SIGUSR1 --full bin/autoautorandr";
+        } // builtins.listToAttrs (
+          switchToSecondaries
+          ++ moveToSecondaries
+          ++ switchToTertiaries
+          ++ moveToTertiaries
+          )
+        );
 
         modes = let mod = config.xsession.windowManager.i3.config.modifier;
 
