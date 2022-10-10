@@ -192,12 +192,12 @@
           coc-jedi = pkgs.nodePackages.coc-python.override rec {
             name = "coc-jedi";
             packageName = "coc-jedi";
-            version = "0.30.1";
+            version = "0.32.0";
 
             src = pkgs.fetchurl {
               url =
                 "https://registry.npmjs.org/coc-jedi/-/coc-jedi-${version}.tgz";
-              sha256 = "15njcpp4wkav5zv0bd3p5nrda2l1nk02lcf2bji68kas796a2qy2";
+              sha256 = "1mlqn7big9j5vgnliy3slp8rb1ig7ykb6qwaj78p6k6g73kvjwbq";
             };
           };
         in pkgs.vimUtils.buildVimPluginFrom2Nix {
