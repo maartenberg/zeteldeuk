@@ -9,6 +9,7 @@
     ../modules/wm.nix
     ../modules/wm/workspace-wrangler.nix
     ../modules/nvim.nix
+    ../modules/nix-support.nix
     # ~/.config/nixpkgs/home-untracked.nix
   ];
 
@@ -43,15 +44,7 @@
     programs.zsh.sessionVariables.NIX_PATH =
       "$HOME/.nix-defexpr/channels\${NIX_PATH:+:}$NIX_PATH";
 
-    nix.package = pkgs.nix;
-    nix.settings = {
-      experimental-features = ["flakes" "nix-command"];
-    };
-    nixpkgs.config.allowUnfree = true;
-
     programs.zsh.shellAliases = {
-      nrc = "nix run -c ";
-      nsh = ''nix run -c env IN_NIX_SHELL=1 NIX_SHELL_NAME="''${NIX_SHELL_NAME:-}-$(basename "$PWD")" $SHELL'' ;
       master = ''git checkout master && git pull && git prune-gone'';
     };
 
@@ -111,9 +104,6 @@
       imageDirectory = "%h/Pictures/Wallpapers";
       interval = "15m";
     };
-
-    programs.direnv.enable = true;
-    services.lorri.enable = true;
 
     programs.neovim.plugins = [
       {

@@ -20,11 +20,6 @@
 
       sessionVariables.MANPAGER = "sh -c 'col -bx | bat -l man -p'";
 
-      initExtra = ''
-        # Run setup for zsh-nix-shell.
-        prompt_nix_shell_setup
-      '';
-
       oh-my-zsh = {
         enable = true;
 
@@ -46,14 +41,6 @@
           "timer"
         ];
       };
-
-      plugins = [
-        # Provide Nix completions.
-        {
-          name = "nix";
-          src = "${pkgs.nix-zsh-completions}/share/zsh/plugins/nix";
-        }
-      ];
     };
   };
 }
