@@ -41,6 +41,19 @@
           "timer"
         ];
       };
+
+      initExtra = ''
+        function direnv_prompt_info() {
+          if [[ -z ''${DIRENV_DIR} ]]; then
+            return 0
+          fi
+
+          shell_name=$(basename -- "$DIRENV_DIR")
+          echo "%F{8}[%F{3}''${shell_name}%F{8}]%f "
+        }
+
+        prompt="\$(direnv_prompt_info)''${prompt}"
+      '';
     };
   };
 }
