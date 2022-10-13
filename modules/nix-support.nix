@@ -5,6 +5,7 @@
       nix.package = pkgs.nix;
       nix.settings = {
         experimental-features = ["flakes" "nix-command"];
+        max-jobs = "auto";
       };
 
       nixpkgs.config.allowUnfree = true;
