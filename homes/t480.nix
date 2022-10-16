@@ -5,6 +5,7 @@
     ../modules/alacritty.nix
     ../modules/git.nix
     ../modules/nix-support.nix
+    ../modules/non-nixos.nix
     ../modules/nvim.nix
     ../modules/tmux.nix
     ../modules/wm.nix
@@ -13,37 +14,15 @@
   ];
 
   config = {
-    targets.genericLinux.enable = true;
-    programs.zsh.sessionVariables.NIX_PATH =
-      "$HOME/.nix-defexpr/channels\${NIX_PATH:+:}$NIX_PATH";
+    home.packages = with pkgs; [
+      cachix
+      cntr
+      niv
+      zotero
+    ];
 
-    xsession.windowManager.i3.config.terminal =
-      pkgs.lib.mkForce "~/.nix-profile/bin/nixGLIntel ${pkgs.alacritty}/bin/alacritty";
     xsession.windowManager.i3.x-barmode = "hide";
     xsession.windowManager.i3.x-trayOutput = "eDP1";
-
-    # xsession.windowManager.i3.config = {
-    #   keybindings = {
-    #     XF86AudioMicMute = "exec pactl set-source-mute @DEFAULT_SOURCE@";
-    #   };
-    # };
-    # xsession.windowManager.i3.config.keybindings."XF86AudioMicMute" = "exec pactl set-source-mute @DEFAULT_SOURCE@ toggle";
-    # xsession.windowManager.i3.config.keybindings."XF86MonBrightnessUp" = "exec xbacklight +10";
-    # xsession.windowManager.i3.config.keybindings."XF86MonBrightnessDown" = "exec xbacklight -10";
-    # xsession.windowManager.i3.config.keybindings."XF86Display" = "exec arandr";
-
-    systemd.user.systemctlPath = "/bin/systemctl";
-
-    services.screen-locker.i3lockPath = "/usr/bin/i3lock";
-
-    services.picom.package = let
-      wrapper = pkgs.writeShellScriptBin "picom" ''
-        ~/.nix-profile/bin/nixGLIntel ${pkgs.picom}/bin/picom $@
-      '';
-    in pkgs.symlinkJoin {
-      name = "picom-nixGL";
-      paths = [ wrapper pkgs.picom ];
-    };
 
     services.network-manager-applet.enable = true;
     services.syncthing.tray.enable = true;
@@ -54,13 +33,6 @@
       notification = false;
     }];
 
-    home.packages = with pkgs; [
-      cachix
-      cntr
-      niv
-      zotero
-    ];
-
     programs.alacritty.settings.font.size = 6;
     programs.bat.enable = true;
 
@@ -70,9 +42,6 @@
     programs.i3status.modules."wireless _first_".enable = pkgs.lib.mkForce true;
 
     # programs.git.userEmail is untracked.
-
-    programs.direnv.enable = true;
-    services.lorri.enable = true;
 
     # Yubico U2F keys are untracked
     # home.file.".config/Yubico/u2f_keys" = {

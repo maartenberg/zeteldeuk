@@ -10,6 +10,7 @@
     ../modules/wm/workspace-wrangler.nix
     ../modules/nvim.nix
     ../modules/nix-support.nix
+    ../modules/non-nixos.nix
     # ~/.config/nixpkgs/home-untracked.nix
   ];
 
@@ -40,10 +41,6 @@
       xclip
     ];
 
-    targets.genericLinux.enable = true;
-    programs.zsh.sessionVariables.NIX_PATH =
-      "$HOME/.nix-defexpr/channels\${NIX_PATH:+:}$NIX_PATH";
-
     programs.zsh.shellAliases = {
       master = ''git checkout master && git pull && git prune-gone'';
     };
@@ -51,9 +48,6 @@
     home.keyboard.options = [ "compose:rctrl" ];
 
     # programs.git.userEmail is untracked.
-
-    xsession.windowManager.i3.config.terminal =
-      pkgs.lib.mkForce "~/.nix-profile/bin/nixGL alacritty";
 
     xsession.windowManager.i3.x-barmode = "hide";
     xsession.windowManager.i3.x-trayOutput = "eDP-1-1";
@@ -68,10 +62,6 @@
     programs.i3status.modules."wireless _first_".enable = pkgs.lib.mkForce true;
 
     programs.autorandr.enable = true;
-
-    systemd.user.systemctlPath = "/bin/systemctl";
-
-    services.screen-locker.i3lockPath = "/usr/bin/i3lock";
 
     services.picom.enable = pkgs.lib.mkForce false;
 
