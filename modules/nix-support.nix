@@ -2,6 +2,14 @@
 
 {
   config = {
+    home.packages = with pkgs; [
+      cachix
+      cntr
+      niv
+      nix-output-monitor
+      nix-tree
+    ];
+
     nix.package = pkgs.nix;
     nix.settings = {
       experimental-features = [ "flakes" "nix-command" ];

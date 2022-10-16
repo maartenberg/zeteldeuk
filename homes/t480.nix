@@ -15,9 +15,6 @@
 
   config = {
     home.packages = with pkgs; [
-      cachix
-      cntr
-      niv
       zotero
     ];
 

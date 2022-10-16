@@ -2,15 +2,15 @@
 
 {
   imports = [
-    ../modules/git.nix
-    ../modules/zsh.nix
-    ../modules/tmux.nix
     ../modules/alacritty.nix
-    ../modules/wm.nix
-    ../modules/wm/workspace-wrangler.nix
-    ../modules/nvim.nix
+    ../modules/git.nix
     ../modules/nix-support.nix
     ../modules/non-nixos.nix
+    ../modules/nvim.nix
+    ../modules/tmux.nix
+    ../modules/wm.nix
+    ../modules/wm/workspace-wrangler.nix
+    ../modules/zsh.nix
     # ~/.config/nixpkgs/home-untracked.nix
   ];
 
@@ -26,14 +26,10 @@
       recursive
 
       black
-      cachix
       fd
       feh
       gron
       jq
-      niv
-      nix-output-monitor
-      nix-tree
       overmind
       playerctl
       ripgrep
