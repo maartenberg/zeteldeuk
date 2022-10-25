@@ -8,9 +8,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    untracked = {
+    untracked-opstop = {
       type = "file";
-      url = "file:///home/maarten/.config/nixpkgs/home-untracked.nix";
+      url = "file:///home/maarten/.config/nixpkgs/untracked-opstop.nix";
       flake = false;
     };
     consul-tunnels = {
@@ -20,7 +20,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, untracked, consul-tunnels, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -33,8 +33,8 @@
 
         modules = [
           ./homes/opstop.nix
-          (import untracked)
-          (import consul-tunnels)
+          (import inputs.untracked-opstop)
+          (import inputs.consul-tunnels)
         ];
       };
     };

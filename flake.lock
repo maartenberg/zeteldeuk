@@ -54,19 +54,19 @@
         "consul-tunnels": "consul-tunnels",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "untracked": "untracked"
+        "untracked-opstop": "untracked-opstop"
       }
     },
-    "untracked": {
+    "untracked-opstop": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-jg2yFoqkwdOwjxA1U5ighkTDtQJN7pHXxcv7PYYwRys=",
+        "narHash": "sha256-fYjdExOgOiDSKDPynK063Aq06iPxHj9XJr+DB60rk4w=",
         "type": "file",
-        "url": "file:///home/maarten/.config/nixpkgs/home-untracked.nix"
+        "url": "file:///home/maarten/.config/nixpkgs/untracked-opstop.nix"
       },
       "original": {
         "type": "file",
-        "url": "file:///home/maarten/.config/nixpkgs/home-untracked.nix"
+        "url": "file:///home/maarten/.config/nixpkgs/untracked-opstop.nix"
       }
     },
     "utils": {
