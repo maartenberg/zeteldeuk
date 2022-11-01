@@ -15,11 +15,7 @@
 
   config = {
     # Allow using programs bound to hotkeys from terminal
-    home.packages = [
-      pkgs.brightnessctl
-      pkgs.maim
-      pkgs.playerctl
-    ];
+    home.packages = [ pkgs.brightnessctl pkgs.maim pkgs.playerctl ];
 
     xsession.windowManager.i3 = {
       enable = true;
@@ -28,12 +24,10 @@
         terminal = "alacritty";
         modifier = "Mod4";
 
-        startup = [
-          {
-            command = "autorandr -c --default horizontal";
-            notification = false;
-          }
-        ];
+        startup = [{
+          command = "autorandr -c --default horizontal";
+          notification = false;
+        }];
 
         colors.focused.border = "#444444";
         colors.focused.background = "#444444";
@@ -108,6 +102,9 @@
 
           "${mod}+Shift+x" = "move workspace to output next";
 
+          "${mod}+Shift+n" =
+            "exec --no-startup-id ~/.local/bin/rename-current-workspace";
+
           "${mod}+Shift+F1" = "exec firefox";
 
           "XF86AudioMute" = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
@@ -116,21 +113,21 @@
           "XF86AudioLowerVolume" =
             "exec pactl set-sink-volume @DEFAULT_SINK@ -2%";
           "XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
-          "${mod}+XF86AudioMute" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
+          "${mod}+XF86AudioMute" =
+            "exec ${pkgs.playerctl}/bin/playerctl play-pause";
           "XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
-          "${mod}+XF86AudioLowerVolume" = "exec ${pkgs.playerctl}/bin/playerctl previous";
+          "${mod}+XF86AudioLowerVolume" =
+            "exec ${pkgs.playerctl}/bin/playerctl previous";
           "XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
-          "${mod}+XF86AudioRaiseVolume" = "exec ${pkgs.playerctl}/bin/playerctl next";
-          "XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl --quiet set 5%-";
-          "XF86MonBrightnessUp"   = "exec ${pkgs.brightnessctl}/bin/brightnessctl --quiet set +5%";
+          "${mod}+XF86AudioRaiseVolume" =
+            "exec ${pkgs.playerctl}/bin/playerctl next";
+          "XF86MonBrightnessDown" =
+            "exec ${pkgs.brightnessctl}/bin/brightnessctl --quiet set 5%-";
+          "XF86MonBrightnessUp" =
+            "exec ${pkgs.brightnessctl}/bin/brightnessctl --quiet set +5%";
           "${mod}+p" = "exec pkill --signal SIGUSR1 --full bin/autoautorandr";
-        } // builtins.listToAttrs (
-          switchToSecondaries
-          ++ moveToSecondaries
-          ++ switchToTertiaries
-          ++ moveToTertiaries
-          )
-        );
+        } // builtins.listToAttrs (switchToSecondaries ++ moveToSecondaries
+          ++ switchToTertiaries ++ moveToTertiaries));
 
         modes = let mod = config.xsession.windowManager.i3.config.modifier;
 
@@ -142,14 +139,14 @@
             "l" = ''
               exec ${pkgs.systemd}/bin/loginctl lock-session; mode "default"'';
             "e" = "exit";
-            "h" =
-              ''exec ${config.systemd.user.systemctlPath} hibernate; mode "default"'';
-            "s" =
-              ''exec ${config.systemd.user.systemctlPath} suspend; mode "default"'';
-            "Shift+s" =
-              ''exec ${config.systemd.user.systemctlPath} poweroff; mode "default"'';
-            "Shift+r" =
-              ''exec ${config.systemd.user.systemctlPath} reboot; mode "default"'';
+            "h" = ''
+              exec ${config.systemd.user.systemctlPath} hibernate; mode "default"'';
+            "s" = ''
+              exec ${config.systemd.user.systemctlPath} suspend; mode "default"'';
+            "Shift+s" = ''
+              exec ${config.systemd.user.systemctlPath} poweroff; mode "default"'';
+            "Shift+r" = ''
+              exec ${config.systemd.user.systemctlPath} reboot; mode "default"'';
           };
           "PrintScreen" = let
             maimCommand = args: ''
@@ -224,6 +221,36 @@
         format_muted = "♪: M (%volume)";
         device = "pulse";
       };
+    };
+
+    home.file.rename-current-workspace = {
+      executable = true;
+      target = ".local/bin/rename-current-workspace";
+      text = ''
+        #!/usr/bin/env python3
+
+        import json
+        import subprocess
+
+        if __name__ == "__main__":
+          ws_json = subprocess.check_output(["i3-msg", "-t", "get_workspaces"], text=True)
+          workspaces = json.loads(ws_json)
+
+          focused_workspace = next(filter(lambda w: w["focused"], workspaces))
+          number = focused_workspace["name"].split(":")[0]
+
+          subprocess.run(
+            [
+              "i3-input",
+              "-F",
+              f'rename workspace to "{number}: %s"',
+              "-P",
+              f"rename workspace {number}: ",
+            ],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+          )
+      '';
     };
   };
 }
