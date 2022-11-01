@@ -2,19 +2,21 @@
 
 {
   options = {
-    xsession.windowManager.i3.x-primaryMonitors = lib.mkOption {
-      type = lib.types.listOf lib.types.str;
-    };
-    xsession.windowManager.i3.x-secondaryMonitor = lib.mkOption {
-      type = lib.types.str;
-    };
+    xsession.windowManager.i3.x-primaryMonitors =
+      lib.mkOption { type = lib.types.listOf lib.types.str; };
+    xsession.windowManager.i3.x-secondaryMonitor =
+      lib.mkOption { type = lib.types.str; };
   };
 
   config = {
     xsession.windowManager.i3.config.workspaceOutputAssign = let
       primaryWorkspaces = map toString (lib.lists.range 1 10);
       secondaryWorkspaces = map toString (lib.lists.range 11 20);
-      primaryOutputs = lib.strings.concatStringsSep " " config.xsession.windowManager.i3.x-primaryMonitors;
+      tertiaryWorkspaces = map toString (lib.lists.range 21 30);
+      primaryOutputs = lib.strings.concatStringsSep " "
+        config.xsession.windowManager.i3.x-primaryMonitors;
+      tertiaryOutputs = lib.strings.concatStringsSep " " (lib.lists.reverseList
+        config.xsession.windowManager.i3.x-primaryMonitors);
 
       assignPrimary = workspace: {
         inherit workspace;
@@ -24,8 +26,14 @@
         inherit workspace;
         output = config.xsession.windowManager.i3.x-secondaryMonitor;
       };
+      assignTertiary = workspace: {
+        inherit workspace;
+        output = tertiaryOutputs;
+      };
 
-    in (map assignPrimary primaryWorkspaces) ++ (map assignSecondary secondaryWorkspaces);
+    in (map assignPrimary primaryWorkspaces)
+    ++ (map assignSecondary secondaryWorkspaces)
+    ++ (map assignTertiary tertiaryWorkspaces);
 
     home.file.autoautorandr = {
       executable = true;
@@ -77,15 +85,11 @@
       '';
     };
 
-    home.packages = [
-      pkgs.arandr
-    ];
+    home.packages = [ pkgs.arandr ];
 
-    xsession.windowManager.i3.config.startup = [
-      {
-        command = "autoautorandr";
-        notification = false;
-      }
-    ];
+    xsession.windowManager.i3.config.startup = [{
+      command = "autoautorandr";
+      notification = false;
+    }];
   };
 }
