@@ -8,7 +8,7 @@
       "$HOME/.nix-defexpr/channels\${NIX_PATH:+:}$NIX_PATH";
 
     xsession.windowManager.i3.config.terminal =
-      pkgs.lib.mkForce "~/.nix-profile/bin/nixGLIntel alacritty";
+      pkgs.lib.mkForce "~/.nix-profile/bin/nixGL alacritty";
 
     services.screen-locker.i3lockPath = "/usr/bin/i3lock";
 
@@ -16,7 +16,7 @@
 
     services.picom.package = let
       wrapper = pkgs.writeShellScriptBin "picom" ''
-        ~/.nix-profile/bin/nixGLIntel ${pkgs.picom}/bin/picom $@
+        ~/.nix-profile/bin/nixGL ${pkgs.picom}/bin/picom $@
       '';
     in pkgs.symlinkJoin {
       name = "picom-nixGL";
