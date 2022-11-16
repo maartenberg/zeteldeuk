@@ -2,13 +2,13 @@
 
 {
   imports = [
-    ~/code/zeteldeuk/modules/alacritty.nix
-    ~/code/zeteldeuk/modules/git.nix
-    ~/code/zeteldeuk/modules/wm.nix
-    ~/code/zeteldeuk/modules/nvim.nix
-    ~/code/zeteldeuk/modules/tmux.nix
-    ~/code/zeteldeuk/modules/zsh.nix
-    ~/.config/nixpkgs/home-untracked.nix
+    ../modules/alacritty.nix
+    ../modules/git.nix
+    ../modules/wm.nix
+    ../modules/nvim.nix
+    ../modules/tmux.nix
+    ../modules/zsh.nix
+    #~/.config/nixpkgs/home-untracked.nix
   ];
 
   config = {
@@ -18,13 +18,21 @@
       discord
       droidcam
       evince
+      gimp
+      gnome.file-roller
+      google-chrome
       htop
+      inkscape
+      # jetbrains.ruby-mine
       keepassxc
+      libreoffice-qt
+      mpv
       niv
       obs-studio
       pavucontrol
+      pcmanfm
       recursive
-      virt-manager
+      scribus
       signal-desktop
       sl
       spotify
@@ -32,13 +40,11 @@
       teams
       texlive.combined.scheme-full
       thunderbird
+      # virt-manager
+      zotero
 
       libnotify
       wayland
-      pcmanfm
-      gnome3.file-roller
-      mpv
-      gimp
       feh
       ripgrep
       openssl
@@ -54,6 +60,8 @@
 
     # programs.git.userEmail is untracked.
 
+    programs.nix-index.enable = true;
+
     programs.firefox.enable = true;
 
     services.pulseeffects.enable = true;
@@ -65,6 +73,8 @@
 
     services.kdeconnect.enable = true;
     services.kdeconnect.indicator = true;
+
+    services.udiskie.enable = true;
 
     programs.autorandr.enable = true;
     # autorandr fingerprints are untracked.
@@ -106,6 +116,14 @@
 
     programs.ssh.enable = true;
     # programs.ssh.matchBlocks is untracked
+
+    home.file.".latexmkrc" = {
+      text = ''
+        $pdf_previewer = 'start evince';
+      '';
+    };
+
+    services.blueman-applet.enable = true;
 
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;

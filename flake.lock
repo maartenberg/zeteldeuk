@@ -91,8 +91,21 @@
         "home-manager": "home-manager",
         "nixGL": "nixGL",
         "nixpkgs": "nixpkgs",
+        "untracked-martinator": "untracked-martinator",
         "untracked-opstop": "untracked-opstop",
         "untracked-t480": "untracked-t480"
+      }
+    },
+    "untracked-martinator": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-Ao96NBauEpAPVcj2uAi446DOTr5pmQIqEAwo9boqA48=",
+        "type": "file",
+        "url": "file:///home/maarten/.config/nixpkgs/untracked-martinator.nix"
+      },
+      "original": {
+        "type": "file",
+        "url": "file:///home/maarten/.config/nixpkgs/untracked-martinator.nix"
       }
     },
     "untracked-opstop": {

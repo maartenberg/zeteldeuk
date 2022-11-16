@@ -12,6 +12,11 @@
       url = "github:guibou/nixGL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    untracked-martinator = {
+      type = "file";
+      url = "file:///home/maarten/.config/nixpkgs/untracked-martinator.nix";
+      flake = false;
+    };
     untracked-opstop = {
       type = "file";
       url = "file:///home/maarten/.config/nixpkgs/untracked-opstop.nix";
@@ -40,6 +45,15 @@
         inherit pkgs;
       };
     in {
+      homeConfigurations.martinator = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+
+        modules = [
+          ./homes/martinator.nix
+          (import inputs.untracked-martinator)
+        ];
+      };
+
       homeConfigurations.opstop = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
