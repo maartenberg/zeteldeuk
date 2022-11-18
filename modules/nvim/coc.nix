@@ -190,24 +190,13 @@
       coc-yaml
       coc-diagnostic
 
-      # Coc-jedi isn't in Nixpkgs but coc-python is, override stuff so it works.
       {
         plugin = let
-          coc-jedi = pkgs.nodePackages.coc-python.override rec {
-            name = "coc-jedi";
-            packageName = "coc-jedi";
-            version = "0.33.1";
-
-            src = pkgs.fetchurl {
-              url =
-                "https://registry.npmjs.org/coc-jedi/-/coc-jedi-${version}.tgz";
-              sha256 = "1ld1y862c3k4gxabw0cfs04nz2hf1fc41bb60dpsvzy878zphmqs";
-            };
-          };
+          p = extraNodePackages."coc-jedi";
         in pkgs.vimUtils.buildVimPluginFrom2Nix {
-          pname = "coc-jedi";
-          version = coc-jedi.version;
-          src = "${coc-jedi}/lib/node_modules/coc-jedi";
+          pname = p.packageName;
+          version = p.version;
+          src = "${p}/lib/node_modules/${p.packageName}";
         };
       }
       {
