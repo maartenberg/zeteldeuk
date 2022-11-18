@@ -57,7 +57,10 @@
       };
     };
 
-    programs.neovim.plugins = with pkgs.vimPlugins; [
+    programs.neovim.plugins = let
+      extraNodePackages =
+        import ../../node-herrie/default.nix { inherit pkgs; };
+    in with pkgs.vimPlugins; [
       # CoC itself
       {
         plugin = coc-nvim;
@@ -157,6 +160,7 @@
           let g:coc_filetype_map = {
             \ 'tex': 'latext',
             \ 'plaintex': 'tex',
+            \ 'yaml.ansible': 'ansible',
             \ }
 
           " Using CocList
@@ -192,18 +196,27 @@
           coc-jedi = pkgs.nodePackages.coc-python.override rec {
             name = "coc-jedi";
             packageName = "coc-jedi";
-            version = "0.32.0";
+            version = "0.33.1";
 
             src = pkgs.fetchurl {
               url =
                 "https://registry.npmjs.org/coc-jedi/-/coc-jedi-${version}.tgz";
-              sha256 = "1mlqn7big9j5vgnliy3slp8rb1ig7ykb6qwaj78p6k6g73kvjwbq";
+              sha256 = "1ld1y862c3k4gxabw0cfs04nz2hf1fc41bb60dpsvzy878zphmqs";
             };
           };
         in pkgs.vimUtils.buildVimPluginFrom2Nix {
           pname = "coc-jedi";
           version = coc-jedi.version;
           src = "${coc-jedi}/lib/node_modules/coc-jedi";
+        };
+      }
+      {
+        plugin = let
+          p = extraNodePackages."@yaegassy/coc-ansible";
+        in pkgs.vimUtils.buildVimPluginFrom2Nix {
+          pname = p.packageName;
+          version = p.version;
+          src = "${p}/lib/node_modules/${p.packageName}";
         };
       }
     ];
