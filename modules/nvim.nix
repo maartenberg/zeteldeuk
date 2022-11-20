@@ -86,6 +86,8 @@
             nnoremap [w :PrevTrailingWhitespace<CR>
           '';
         }
+
+        ansible-vim
       ];
       extraConfig = ''
         " === Options ===
