@@ -12,7 +12,7 @@
     ];
 
     programs.neovim.extraPackages =
-      [ pkgs.haskell-language-server pkgs.yamllint ];
+      [ pkgs.haskell-language-server pkgs.yamllint pkgs.terraform-ls ];
 
     # Write CoC settings file.
     home.file."coc-settings.json" = {
@@ -31,6 +31,13 @@
               "hie.yaml"
             ];
             "filetypes" = [ "haskell" "lhaskell" ];
+          };
+          "terraform" = {
+            "command" = "terraform-ls";
+            "args" = [ "serve" ];
+            "filetypes" = [ "terraform" "tf" ];
+            "initializationOptions" = { };
+            "settings" = { };
           };
         };
 
