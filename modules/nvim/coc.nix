@@ -191,8 +191,7 @@
       coc-diagnostic
 
       {
-        plugin = let
-          p = extraNodePackages."coc-jedi";
+        plugin = let p = extraNodePackages."coc-jedi";
         in pkgs.vimUtils.buildVimPluginFrom2Nix {
           pname = p.packageName;
           version = p.version;
@@ -200,10 +199,9 @@
         };
       }
       {
-        plugin = let
-          p = extraNodePackages."@yaegassy/coc-ansible";
+        plugin = let p = extraNodePackages."@yaegassy/coc-ansible";
         in pkgs.vimUtils.buildVimPluginFrom2Nix {
-          pname = p.packageName;
+          pname = "coc-ansible";
           version = p.version;
           src = "${p}/lib/node_modules/${p.packageName}";
         };
