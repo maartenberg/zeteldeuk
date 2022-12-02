@@ -193,7 +193,7 @@
       # CoC plugins:
       coc-css
       coc-json
-      coc-rls
+      coc-rust-analyzer
       coc-yaml
       coc-diagnostic
 
