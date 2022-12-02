@@ -62,11 +62,7 @@
           (import inputs.untracked-opstop)
           (import inputs.consul-tunnels)
           {
-            home.packages = [
-              nixGL.nixGLNVidia
-              nixGL.nixVulkanNVidia
-            ];
-            programs.nixGL.binary = "nixGLNVidia";
+            programs.nixGL.binary = "nixGL";
           }
         ];
       };
