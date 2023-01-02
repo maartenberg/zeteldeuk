@@ -63,6 +63,9 @@
 
     services.network-manager-applet.enable = true;
 
+    services.kdeconnect.enable = true;
+    services.kdeconnect.indicator = true;
+
     xsession.windowManager.i3.config.startup = [
       {
         command =
