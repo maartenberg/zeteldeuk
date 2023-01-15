@@ -8,7 +8,7 @@
     ../modules/nvim.nix
     ../modules/tmux.nix
     ../modules/zsh.nix
-    #~/.config/nixpkgs/home-untracked.nix
+    ../modules/wm/workspace-wrangler.nix
   ];
 
   config = {
@@ -57,6 +57,9 @@
       unzip
       file
     ];
+
+    xsession.windowManager.i3.x-primaryMonitors = [ "DisplayPort-0" ];
+    xsession.windowManager.i3.x-secondaryMonitor = "DisplayPort-1";
 
     # programs.git.userEmail is untracked.
 
