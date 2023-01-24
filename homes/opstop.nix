@@ -86,6 +86,10 @@
         command = "/bin/systemctl --user start i3-graphical-session.target";
         notification = false;
       }
+      {
+        command = "/usr/bin/ibus exit";
+        notification = false;
+      }
     ];
 
     systemd.user.targets = {
