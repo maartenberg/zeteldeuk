@@ -55,7 +55,7 @@
     xsession.windowManager.i3.x-secondaryMonitor = "eDP-1-1";
 
     # Ubuntu 22.04 does not set SSH_AUTH_SOCK on login, so don't import-environment it
-    xsession.importedVariables = [
+    xsession.importedVariables = pkgs.lib.mkForce [
       "DBUS_SESSION_BUS_ADDRESS"
       "DISPLAY"
       "XAUTHORITY"
