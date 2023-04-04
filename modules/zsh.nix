@@ -7,6 +7,18 @@
       theme = "gruvbox-dark";
     };
 
+    programs.fzf = {
+      enable = true;
+
+      changeDirWidgetCommand = "fd --type d";
+      defaultCommand = "fd --type f";
+      fileWidgetCommand = "fd --type f";
+    };
+
+    home.packages = with pkgs; [
+      fd
+    ];
+
     programs.zsh = {
       enable = true;
       enableSyntaxHighlighting = true;

@@ -26,7 +26,6 @@
       recursive
 
       black
-      fd
       feh
       gron
       jq
