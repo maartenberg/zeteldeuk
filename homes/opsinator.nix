@@ -16,7 +16,6 @@
       recursive
 
       black
-      cachix
       feh
       mpv-with-scripts
       niv
