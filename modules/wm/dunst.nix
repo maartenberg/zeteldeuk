@@ -23,8 +23,7 @@
 
         idle_threshold = 60;
 
-        monitor = 0;
-        follow = "none";
+        follow = "mouse";
 
         line_height = 3;
 
