@@ -26,9 +26,13 @@
       recursive
 
       black
+      diffoscope
       feh
       gron
       jq
+      nix-diff
+      nix-tree
+      nvd
       overmind
       playerctl
       ripgrep
