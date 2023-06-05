@@ -4,22 +4,22 @@
 
 let
   sources = {
-    "@ansible/ansible-language-server-1.0.2" = {
+    "@ansible/ansible-language-server-1.0.4" = {
       name = "_at_ansible_slash_ansible-language-server";
       packageName = "@ansible/ansible-language-server";
-      version = "1.0.2";
+      version = "1.0.4";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@ansible/ansible-language-server/-/ansible-language-server-1.0.2.tgz";
-        sha512 = "z23uIaj9IAdqiB6xHYNOUSrBXJQwQjywMLhKOoejuC7AECXmqLPjYm4cMgiPG3SjO6nmSIe08nq/Qfhu2Bm5ww==";
+        url = "https://registry.npmjs.org/@ansible/ansible-language-server/-/ansible-language-server-1.0.4.tgz";
+        sha512 = "IvzdGDCMc/gtnWEFk9H7hSWuh6T+7g0OQTkvy4u6vduU1AJDGAsYqW7t8HC3ScOc+v3c9qewEPzvz+1W68L4Vw==";
       };
     };
-    "@flatten-js/interval-tree-1.0.19" = {
+    "@flatten-js/interval-tree-1.0.20" = {
       name = "_at_flatten-js_slash_interval-tree";
       packageName = "@flatten-js/interval-tree";
-      version = "1.0.19";
+      version = "1.0.20";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@flatten-js/interval-tree/-/interval-tree-1.0.19.tgz";
-        sha512 = "E+uCpmzAP6EL1L0VDligIg2oUnwbzhSMRXts8Ct7OQ+i+dFEgefExcKnTwGFa+MUZGYAIKHBoUWo/f/lhqc1Ew==";
+        url = "https://registry.npmjs.org/@flatten-js/interval-tree/-/interval-tree-1.0.20.tgz";
+        sha512 = "ZmJAa7pDel/FiSN3gXYnrK51Od+maJ+54hJe2PZlWGFWLfQv1YP9DdjNofpg0+HS956oItjse2eWkIMdTZUhRw==";
       };
     };
     "balanced-match-1.0.2" = {
@@ -49,13 +49,13 @@ let
         sha512 = "OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==";
       };
     };
-    "glob-8.0.3" = {
+    "glob-8.1.0" = {
       name = "glob";
       packageName = "glob";
-      version = "8.0.3";
+      version = "8.1.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/glob/-/glob-8.0.3.tgz";
-        sha512 = "ull455NHSHI/Y1FqGaaYFaLGkNMMJbavMrEGFXG/PGrg6y7sutWHUHrz6gy6WEBH6akM1M414dWKCNs+IhKdiQ==";
+        url = "https://registry.npmjs.org/glob/-/glob-8.1.0.tgz";
+        sha512 = "r8hpEjiQEYlF2QU0df3dS+nxxSIreXQS1qRhMJM0Q5NDdR386C7jb7Hwwod8Fgiuex+k0GFjgft18yvxm5XoCQ==";
       };
     };
     "inflight-1.0.6" = {
@@ -94,13 +94,13 @@ let
         sha512 = "v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==";
       };
     };
-    "minimatch-5.1.0" = {
+    "minimatch-5.1.6" = {
       name = "minimatch";
       packageName = "minimatch";
-      version = "5.1.0";
+      version = "5.1.6";
       src = fetchurl {
-        url = "https://registry.npmjs.org/minimatch/-/minimatch-5.1.0.tgz";
-        sha512 = "9TPBGGak4nHfGZsPBohm9AWg6NoT7QTCehS3BIJABslyZbzxfV78QM2Y6+i741OPZIafFAaiiEMh5OyIrJPgtg==";
+        url = "https://registry.npmjs.org/minimatch/-/minimatch-5.1.6.tgz";
+        sha512 = "lKwV/1brpG6mBUFHtb7NUmtABCb2WZZmm2wNiOA5hAb8VdCS4B3dtMWyvcoViccwAW/COERjXLt0zP1zXUN26g==";
       };
     };
     "once-1.4.0" = {
@@ -148,13 +148,13 @@ let
         sha512 = "sdeUoAawceQdgIfTI+sdcwkiK2KU+2cbEYA0agzM2uqaUy2UpnnGHtWTHVEtS0ES4zHU0eMFRGN+oQgDxlD66A==";
       };
     };
-    "vscode-languageserver-textdocument-1.0.7" = {
+    "vscode-languageserver-textdocument-1.0.10" = {
       name = "vscode-languageserver-textdocument";
       packageName = "vscode-languageserver-textdocument";
-      version = "1.0.7";
+      version = "1.0.10";
       src = fetchurl {
-        url = "https://registry.npmjs.org/vscode-languageserver-textdocument/-/vscode-languageserver-textdocument-1.0.7.tgz";
-        sha512 = "bFJH7UQxlXT8kKeyiyu41r22jCZXG8kuuVVA33OEJn1diWOZK5n8zBSPZFHVBOu8kXZ6h0LIRhf5UnCo61J4Hg==";
+        url = "https://registry.npmjs.org/vscode-languageserver-textdocument/-/vscode-languageserver-textdocument-1.0.10.tgz";
+        sha512 = "dPA6WqtAQJ/Iopm0Hrj11VvaKxsEcm62jpqyaYbY0xuvUffeWAn77f3VKr2SCsJphSyEw4Fjkjqm2gQ24KQfrA==";
       };
     };
     "vscode-languageserver-types-3.16.0" = {
@@ -166,13 +166,13 @@ let
         sha512 = "k8luDIWJWyenLc5ToFQQMaSrqCHiLwyKPHKPQZ5zz21vM+vIVUSvsRpcbiECH4WR88K2XZqc4ScRcZ7nk/jbeA==";
       };
     };
-    "vscode-uri-3.0.6" = {
+    "vscode-uri-3.0.7" = {
       name = "vscode-uri";
       packageName = "vscode-uri";
-      version = "3.0.6";
+      version = "3.0.7";
       src = fetchurl {
-        url = "https://registry.npmjs.org/vscode-uri/-/vscode-uri-3.0.6.tgz";
-        sha512 = "fmL7V1eiDBFRRnu+gfRWTzyPpNIHJTc4mWnFkwBUmO9U3KPgJAmTx7oxi2bl/Rh6HLdU7+4C9wlj0k2E4AdKFQ==";
+        url = "https://registry.npmjs.org/vscode-uri/-/vscode-uri-3.0.7.tgz";
+        sha512 = "eOpPHogvorZRobNqJGhapa0JdwaxpjVvyBp0QIUMRMSf8ZAlqOdEquKuRmw9Qwu0qXtJIWqFtMkmvJjUZmMjVA==";
       };
     };
     "wrappy-1.0.2" = {
@@ -199,31 +199,31 @@ in
   "@yaegassy/coc-ansible" = nodeEnv.buildNodePackage {
     name = "_at_yaegassy_slash_coc-ansible";
     packageName = "@yaegassy/coc-ansible";
-    version = "0.13.2";
+    version = "0.13.6";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@yaegassy/coc-ansible/-/coc-ansible-0.13.2.tgz";
-      sha512 = "sCIhJFIxnHbfOC0Q07VHmYpmMs6bCAUuFk9bWQBwYKGoIVXeyrGpH/nNpmQEzYXVXjBx1aCooE3+Z7HWLRphmQ==";
+      url = "https://registry.npmjs.org/@yaegassy/coc-ansible/-/coc-ansible-0.13.6.tgz";
+      sha512 = "F+q8yKxLzRwB16KnMcaeCBH4Yjh8tr/kVwLTHxjUIKuGGDdcjB0EKRMDb6gK6TjbjJgs+zjHOZQplQ39fN9OYA==";
     };
     dependencies = [
-      sources."@ansible/ansible-language-server-1.0.2"
-      sources."@flatten-js/interval-tree-1.0.19"
+      sources."@ansible/ansible-language-server-1.0.4"
+      sources."@flatten-js/interval-tree-1.0.20"
       sources."balanced-match-1.0.2"
       sources."brace-expansion-2.0.1"
       sources."fs.realpath-1.0.0"
-      sources."glob-8.0.3"
+      sources."glob-8.1.0"
       sources."inflight-1.0.6"
       sources."inherits-2.0.4"
       sources."ini-3.0.1"
       sources."lodash-4.17.21"
-      sources."minimatch-5.1.0"
+      sources."minimatch-5.1.6"
       sources."once-1.4.0"
       sources."uuid-8.3.2"
       sources."vscode-jsonrpc-6.0.0"
       sources."vscode-languageserver-7.0.0"
       sources."vscode-languageserver-protocol-3.16.0"
-      sources."vscode-languageserver-textdocument-1.0.7"
+      sources."vscode-languageserver-textdocument-1.0.10"
       sources."vscode-languageserver-types-3.16.0"
-      sources."vscode-uri-3.0.6"
+      sources."vscode-uri-3.0.7"
       sources."wrappy-1.0.2"
       sources."yaml-1.10.2"
     ];
@@ -240,10 +240,10 @@ in
   coc-jedi = nodeEnv.buildNodePackage {
     name = "coc-jedi";
     packageName = "coc-jedi";
-    version = "0.33.1";
+    version = "0.35.0";
     src = fetchurl {
-      url = "https://registry.npmjs.org/coc-jedi/-/coc-jedi-0.33.1.tgz";
-      sha512 = "salbSrY3Y7gabfyJlagLRYl5Bc2QRdu4bIbzBa+kXou6tP/4u5YTUA6t0oPl0Q58oxDUydnEwN6twgO5by+uqg==";
+      url = "https://registry.npmjs.org/coc-jedi/-/coc-jedi-0.35.0.tgz";
+      sha512 = "1FvTB1P+P8D8D8rBCTKLlQFOpMal8HJfVmxNXE6QSM891oD75HMhnN9IL25De0GgTyzbfdSCtbXhxkoos/CWSQ==";
     };
     buildInputs = globalBuildInputs;
     meta = {
