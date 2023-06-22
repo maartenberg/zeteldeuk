@@ -115,7 +115,7 @@
         autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 expandtab
 
         " Python: default width for Black
-        autocmd FileType python setlocal textwidth=88
+        autocmd FileType python setlocal textwidth=100
 
         " Haskell: better style
         autocmd FileType haskell setlocal shiftwidth=2 tabstop=2 expandtab
@@ -149,7 +149,7 @@
 
         autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 expandtab
 
-        autocmd FileType python setlocal textwidth=88
+        autocmd FileType python setlocal textwidth=100
 
         nnoremap <silent> <BS> :nohlsearch<CR>
 
