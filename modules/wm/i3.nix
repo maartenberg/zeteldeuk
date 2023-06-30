@@ -107,20 +107,28 @@
 
           "${mod}+Shift+F1" = "exec firefox";
 
-          "XF86AudioMute" = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
-          "XF86AudioRaiseVolume" =
-            "exec pactl set-sink-volume @DEFAULT_SINK@ +2%";
-          "XF86AudioLowerVolume" =
-            "exec pactl set-sink-volume @DEFAULT_SINK@ -2%";
-          "XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
-          "${mod}+XF86AudioMute" =
-            "exec ${pkgs.playerctl}/bin/playerctl play-pause";
-          "XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
-          "${mod}+XF86AudioLowerVolume" =
-            "exec ${pkgs.playerctl}/bin/playerctl previous";
-          "XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
-          "${mod}+XF86AudioRaiseVolume" =
-            "exec ${pkgs.playerctl}/bin/playerctl next";
+          # Mute
+          "XF86AudioMute"               = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
+          "${mod}+Shift+F9"             = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
+          # Vol up
+          "XF86AudioRaiseVolume"        = "exec pactl set-sink-volume @DEFAULT_SINK@ +2%";
+          "${mod}+Shift+F8"             = "exec pactl set-sink-volume @DEFAULT_SINK@ +2%";
+          # Vol down
+          "XF86AudioLowerVolume"        = "exec pactl set-sink-volume @DEFAULT_SINK@ -2%";
+          "${mod}+Shift+F7"             = "exec pactl set-sink-volume @DEFAULT_SINK@ -2%";
+          # Play/pause
+          "XF86AudioPlay"               = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
+          "${mod}+XF86AudioMute"        = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
+          "${mod}+Shift+F11"            = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
+          # Prev
+          "XF86AudioPrev"               = "exec ${pkgs.playerctl}/bin/playerctl previous";
+          "${mod}+XF86AudioLowerVolume" = "exec ${pkgs.playerctl}/bin/playerctl previous";
+          "${mod}+Shift+F10"            = "exec ${pkgs.playerctl}/bin/playerctl previous";
+          # Next
+          "XF86AudioNext"               = "exec ${pkgs.playerctl}/bin/playerctl next";
+          "${mod}+XF86AudioRaiseVolume" = "exec ${pkgs.playerctl}/bin/playerctl next";
+          "${mod}+Shift+F12"            = "exec ${pkgs.playerctl}/bin/playerctl next";
+
           "XF86MonBrightnessDown" =
             "exec ${pkgs.brightnessctl}/bin/brightnessctl --quiet set 5%-";
           "XF86MonBrightnessUp" =
