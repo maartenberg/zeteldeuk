@@ -14,15 +14,10 @@
         primaryWorkspaces = map toString (lib.lists.range 1 10);
         secondaryWorkspaces = map toString (lib.lists.range 11 20);
         tertiaryWorkspaces = map toString (lib.lists.range 21 30);
-        primaryOutputs = lib.strings.concatStringsSep " "
-          config.xsession.windowManager.i3.x-primaryMonitors;
-        tertiaryOutputs = lib.strings.concatStringsSep " "
-          (lib.lists.reverseList
-            config.xsession.windowManager.i3.x-primaryMonitors);
 
         assignPrimary = workspace: {
           inherit workspace;
-          output = primaryOutputs;
+          output = config.xsession.windowManager.i3.x-primaryMonitors;
         };
         assignSecondary = workspace: {
           inherit workspace;
@@ -30,7 +25,7 @@
         };
         assignTertiary = workspace: {
           inherit workspace;
-          output = tertiaryOutputs;
+          output = lib.lists.reverseList config.xsession.windowManager.i3.x-primaryMonitors;
         };
 
       in (map assignPrimary primaryWorkspaces)
