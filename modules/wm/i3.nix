@@ -131,8 +131,12 @@
 
           "XF86MonBrightnessDown" =
             "exec ${pkgs.brightnessctl}/bin/brightnessctl --quiet set 5%-";
+          "Shift+XF86MonBrightnessDown" =
+            "exec ${pkgs.brightnessctl}/bin/brightnessctl --quiet set 5%";
           "XF86MonBrightnessUp" =
             "exec ${pkgs.brightnessctl}/bin/brightnessctl --quiet set +5%";
+          "Shift+XF86MonBrightnessUp" =
+            "exec ${pkgs.brightnessctl}/bin/brightnessctl --quiet set 100%";
           "${mod}+p" = "exec pkill --signal SIGUSR1 --full bin/autoautorandr";
         } // builtins.listToAttrs (switchToSecondaries ++ moveToSecondaries
           ++ switchToTertiaries ++ moveToTertiaries));
