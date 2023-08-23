@@ -12,6 +12,23 @@
         "url": "file:///home/maarten/.config/nixpkgs/consul-tunnels.nix"
       }
     },
+    "firenvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1691854634,
+        "narHash": "sha256-x5yNedTvL5AjUmQORkrj4aFgkRVsTzn/mCVGBIjLJTo=",
+        "owner": "glacambre",
+        "repo": "firenvim",
+        "rev": "1acdf0270bdd9b83a876a15c99dca3c9b40fbaa5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "glacambre",
+        "ref": "0.2.15",
+        "repo": "firenvim",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "locked": {
         "lastModified": 1659877975,
@@ -87,6 +104,7 @@
     "root": {
       "inputs": {
         "consul-tunnels": "consul-tunnels",
+        "firenvim": "firenvim",
         "home-manager": "home-manager",
         "nixGL": "nixGL",
         "nixpkgs": "nixpkgs",

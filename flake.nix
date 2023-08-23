@@ -32,6 +32,10 @@
       url = "file:///home/maarten/.config/nixpkgs/consul-tunnels.nix";
       flake = false;
     };
+    firenvim = {
+      url = "github:glacambre/firenvim/0.2.15";
+      flake = false;
+    };
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }:
@@ -52,6 +56,8 @@
           ./homes/martinator.nix
           (import inputs.untracked-martinator)
         ];
+
+        extraSpecialArgs = inputs;
       };
 
       homeConfigurations.opstop = home-manager.lib.homeManagerConfiguration {
@@ -65,6 +71,8 @@
             programs.nixGL.binary = "nixGL";
           }
         ];
+
+        extraSpecialArgs = inputs;
       };
 
       homeConfigurations.t480 = home-manager.lib.homeManagerConfiguration {
@@ -81,6 +89,8 @@
             programs.nixGL.binary = "nixGLIntel";
           }
         ];
+
+        extraSpecialArgs = inputs;
       };
     };
 }

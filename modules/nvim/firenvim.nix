@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, firenvim, ... }:
 
 with lib;
 
@@ -16,12 +16,7 @@ in {
         pname = "firenvim";
         inherit version;
 
-        src = pkgs.fetchFromGitHub {
-          owner = "glacambre";
-          repo = "firenvim";
-          rev = "v${version}";
-          sha256 = hash;
-        };
+        src = firenvim;
       };
 
       config = ''
