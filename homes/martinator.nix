@@ -37,7 +37,6 @@
       sl
       spotify
       tdesktop
-      teams
       texlive.combined.scheme-full
       thunderbird
       # virt-manager
