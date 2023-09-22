@@ -25,7 +25,6 @@
       recursive
 
       black
-      diffoscope
       feh
       gron
       jq
