@@ -31,8 +31,6 @@
       sessionVariables.TIMER_THRESHOLD = "5";
       sessionVariables.TIMER_FORMAT = "[%d]";
 
-      sessionVariables.MANPAGER = "bat -l man -p'";
-
       oh-my-zsh = {
         enable = true;
 
