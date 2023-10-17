@@ -2,6 +2,10 @@
 
 {
   config = {
+    home.packages = with pkgs; [
+      git-autofixup
+    ];
+
     programs.git = {
       enable = true;
       package = pkgs.gitAndTools.gitFull;
