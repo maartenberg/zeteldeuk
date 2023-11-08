@@ -141,6 +141,8 @@
             autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
             " Update signature help on jump placeholder
             autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+            " Detect Ansible playbooks correctly
+            autocmd BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible
           augroup end
 
           " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
