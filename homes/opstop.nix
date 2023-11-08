@@ -20,7 +20,6 @@
       pavucontrol
       signal-desktop
       spotify
-      zotero
 
       recursive
 

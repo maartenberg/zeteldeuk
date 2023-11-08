@@ -40,7 +40,6 @@
       texlive.combined.scheme-full
       thunderbird
       # virt-manager
-      zotero
 
       libnotify
       wayland

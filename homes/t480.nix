@@ -14,10 +14,6 @@
   ];
 
   config = {
-    home.packages = with pkgs; [
-      zotero
-    ];
-
     xsession.windowManager.i3.x-barmode = "hide";
     xsession.windowManager.i3.x-trayOutput = "eDP1";
 
