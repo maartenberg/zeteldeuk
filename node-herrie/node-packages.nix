@@ -4,22 +4,31 @@
 
 let
   sources = {
-    "@ansible/ansible-language-server-1.0.4" = {
+    "@ansible/ansible-language-server-1.2.1" = {
       name = "_at_ansible_slash_ansible-language-server";
       packageName = "@ansible/ansible-language-server";
-      version = "1.0.4";
+      version = "1.2.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@ansible/ansible-language-server/-/ansible-language-server-1.0.4.tgz";
-        sha512 = "IvzdGDCMc/gtnWEFk9H7hSWuh6T+7g0OQTkvy4u6vduU1AJDGAsYqW7t8HC3ScOc+v3c9qewEPzvz+1W68L4Vw==";
+        url = "https://registry.npmjs.org/@ansible/ansible-language-server/-/ansible-language-server-1.2.1.tgz";
+        sha512 = "Lb8BE8xOxxP5JaatEcnz5UprDhG2tMI4RR95bbj9NHW0C1Vv3EWtfX1yzVA7wk+DxScvAxwPioBAN7NeMrJoUQ==";
       };
     };
-    "@flatten-js/interval-tree-1.0.20" = {
+    "@flatten-js/interval-tree-1.1.1" = {
       name = "_at_flatten-js_slash_interval-tree";
       packageName = "@flatten-js/interval-tree";
-      version = "1.0.20";
+      version = "1.1.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@flatten-js/interval-tree/-/interval-tree-1.0.20.tgz";
-        sha512 = "ZmJAa7pDel/FiSN3gXYnrK51Od+maJ+54hJe2PZlWGFWLfQv1YP9DdjNofpg0+HS956oItjse2eWkIMdTZUhRw==";
+        url = "https://registry.npmjs.org/@flatten-js/interval-tree/-/interval-tree-1.1.1.tgz";
+        sha512 = "IsD8MPvzlbrUZnqychSEPM0dX6DXFG6ObFVbJs8asb5cwUOCek+Qi10W/mK7N9aqKkNpOSSzEIkrhHOiOXZlXw==";
+      };
+    };
+    "antsibull-docs-1.0.0" = {
+      name = "antsibull-docs";
+      packageName = "antsibull-docs";
+      version = "1.0.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/antsibull-docs/-/antsibull-docs-1.0.0.tgz";
+        sha512 = "OqrXCQkKeqTTuFBmQc9RJnXPcjUtRnMq0rfmT3zlp6UHJWTwq1SLffwOEw1I5jC7FNLMoabUjPb8wxCNB3RaZw==";
       };
     };
     "balanced-match-1.0.2" = {
@@ -49,40 +58,22 @@ let
         sha512 = "OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==";
       };
     };
-    "glob-8.1.0" = {
+    "glob-9.3.5" = {
       name = "glob";
       packageName = "glob";
-      version = "8.1.0";
+      version = "9.3.5";
       src = fetchurl {
-        url = "https://registry.npmjs.org/glob/-/glob-8.1.0.tgz";
-        sha512 = "r8hpEjiQEYlF2QU0df3dS+nxxSIreXQS1qRhMJM0Q5NDdR386C7jb7Hwwod8Fgiuex+k0GFjgft18yvxm5XoCQ==";
+        url = "https://registry.npmjs.org/glob/-/glob-9.3.5.tgz";
+        sha512 = "e1LleDykUz2Iu+MTYdkSsuWX8lvAjAcs0Xef0lNIu0S2wOAzuTxCJtcd9S3cijlwYF18EsU3rzb8jPVobxDh9Q==";
       };
     };
-    "inflight-1.0.6" = {
-      name = "inflight";
-      packageName = "inflight";
-      version = "1.0.6";
-      src = fetchurl {
-        url = "https://registry.npmjs.org/inflight/-/inflight-1.0.6.tgz";
-        sha512 = "k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==";
-      };
-    };
-    "inherits-2.0.4" = {
-      name = "inherits";
-      packageName = "inherits";
-      version = "2.0.4";
-      src = fetchurl {
-        url = "https://registry.npmjs.org/inherits/-/inherits-2.0.4.tgz";
-        sha512 = "k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==";
-      };
-    };
-    "ini-3.0.1" = {
+    "ini-4.1.1" = {
       name = "ini";
       packageName = "ini";
-      version = "3.0.1";
+      version = "4.1.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/ini/-/ini-3.0.1.tgz";
-        sha512 = "it4HyVAUTKBc6m8e1iXWvXSTdndF7HbdN713+kvLrymxTaU4AUBWrJ4vEooP+V7fexnVD3LKcBshjGGPefSMUQ==";
+        url = "https://registry.npmjs.org/ini/-/ini-4.1.1.tgz";
+        sha512 = "QQnnxNyfvmHFIsj7gkPcYymR8Jdw/o7mp5ZFihxn6h8Ci6fh3Dx4E1gPjpQEpIuPo9XVNY/ZUwh4BPMjGyL01g==";
       };
     };
     "lodash-4.17.21" = {
@@ -94,103 +85,121 @@ let
         sha512 = "v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==";
       };
     };
-    "minimatch-5.1.6" = {
+    "lru-cache-10.0.1" = {
+      name = "lru-cache";
+      packageName = "lru-cache";
+      version = "10.0.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/lru-cache/-/lru-cache-10.0.1.tgz";
+        sha512 = "IJ4uwUTi2qCccrioU6g9g/5rvvVl13bsdczUUcqbciD9iLr095yj8DQKdObriEvuNSx325N1rV1O0sJFszx75g==";
+      };
+    };
+    "minimatch-8.0.4" = {
       name = "minimatch";
       packageName = "minimatch";
-      version = "5.1.6";
+      version = "8.0.4";
       src = fetchurl {
-        url = "https://registry.npmjs.org/minimatch/-/minimatch-5.1.6.tgz";
-        sha512 = "lKwV/1brpG6mBUFHtb7NUmtABCb2WZZmm2wNiOA5hAb8VdCS4B3dtMWyvcoViccwAW/COERjXLt0zP1zXUN26g==";
+        url = "https://registry.npmjs.org/minimatch/-/minimatch-8.0.4.tgz";
+        sha512 = "W0Wvr9HyFXZRGIDgCicunpQ299OKXs9RgZfaukz4qAW/pJhcpUfupc9c+OObPOFueNy8VSrZgEmDtk6Kh4WzDA==";
       };
     };
-    "once-1.4.0" = {
-      name = "once";
-      packageName = "once";
-      version = "1.4.0";
+    "minipass-4.2.8" = {
+      name = "minipass";
+      packageName = "minipass";
+      version = "4.2.8";
       src = fetchurl {
-        url = "https://registry.npmjs.org/once/-/once-1.4.0.tgz";
-        sha512 = "lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==";
+        url = "https://registry.npmjs.org/minipass/-/minipass-4.2.8.tgz";
+        sha512 = "fNzuVyifolSLFL4NzpF+wEF4qrgqaaKX0haXPQEdQ7NKAN+WecoKMHV09YcuL/DHxrUsYQOK3MiuDf7Ip2OXfQ==";
       };
     };
-    "uuid-8.3.2" = {
+    "minipass-7.0.4" = {
+      name = "minipass";
+      packageName = "minipass";
+      version = "7.0.4";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/minipass/-/minipass-7.0.4.tgz";
+        sha512 = "jYofLM5Dam9279rdkWzqHozUo4ybjdZmCsDHePy5V/PbBcVMiSZR97gmAy45aqi8CK1lG2ECd356FU86avfwUQ==";
+      };
+    };
+    "path-scurry-1.10.1" = {
+      name = "path-scurry";
+      packageName = "path-scurry";
+      version = "1.10.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/path-scurry/-/path-scurry-1.10.1.tgz";
+        sha512 = "MkhCqzzBEpPvxxQ71Md0b1Kk51W01lrYvlMzSUaIzNsODdd7mqhiimSZlr+VegAz5Z6Vzt9Xg2ttE//XBhH3EQ==";
+      };
+    };
+    "uuid-9.0.1" = {
       name = "uuid";
       packageName = "uuid";
-      version = "8.3.2";
+      version = "9.0.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/uuid/-/uuid-8.3.2.tgz";
-        sha512 = "+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==";
+        url = "https://registry.npmjs.org/uuid/-/uuid-9.0.1.tgz";
+        sha512 = "b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==";
       };
     };
-    "vscode-jsonrpc-6.0.0" = {
+    "vscode-jsonrpc-8.1.0" = {
       name = "vscode-jsonrpc";
       packageName = "vscode-jsonrpc";
-      version = "6.0.0";
+      version = "8.1.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/vscode-jsonrpc/-/vscode-jsonrpc-6.0.0.tgz";
-        sha512 = "wnJA4BnEjOSyFMvjZdpiOwhSq9uDoK8e/kpRJDTaMYzwlkrhG1fwDIZI94CLsLzlCK5cIbMMtFlJlfR57Lavmg==";
+        url = "https://registry.npmjs.org/vscode-jsonrpc/-/vscode-jsonrpc-8.1.0.tgz";
+        sha512 = "6TDy/abTQk+zDGYazgbIPc+4JoXdwC8NHU9Pbn4UJP1fehUyZmM4RHp5IthX7A6L5KS30PRui+j+tbbMMMafdw==";
       };
     };
-    "vscode-languageserver-7.0.0" = {
+    "vscode-languageserver-8.1.0" = {
       name = "vscode-languageserver";
       packageName = "vscode-languageserver";
-      version = "7.0.0";
+      version = "8.1.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/vscode-languageserver/-/vscode-languageserver-7.0.0.tgz";
-        sha512 = "60HTx5ID+fLRcgdHfmz0LDZAXYEV68fzwG0JWwEPBode9NuMYTIxuYXPg4ngO8i8+Ou0lM7y6GzaYWbiDL0drw==";
+        url = "https://registry.npmjs.org/vscode-languageserver/-/vscode-languageserver-8.1.0.tgz";
+        sha512 = "eUt8f1z2N2IEUDBsKaNapkz7jl5QpskN2Y0G01T/ItMxBxw1fJwvtySGB9QMecatne8jFIWJGWI61dWjyTLQsw==";
       };
     };
-    "vscode-languageserver-protocol-3.16.0" = {
+    "vscode-languageserver-protocol-3.17.3" = {
       name = "vscode-languageserver-protocol";
       packageName = "vscode-languageserver-protocol";
-      version = "3.16.0";
+      version = "3.17.3";
       src = fetchurl {
-        url = "https://registry.npmjs.org/vscode-languageserver-protocol/-/vscode-languageserver-protocol-3.16.0.tgz";
-        sha512 = "sdeUoAawceQdgIfTI+sdcwkiK2KU+2cbEYA0agzM2uqaUy2UpnnGHtWTHVEtS0ES4zHU0eMFRGN+oQgDxlD66A==";
+        url = "https://registry.npmjs.org/vscode-languageserver-protocol/-/vscode-languageserver-protocol-3.17.3.tgz";
+        sha512 = "924/h0AqsMtA5yK22GgMtCYiMdCOtWTSGgUOkgEDX+wk2b0x4sAfLiO4NxBxqbiVtz7K7/1/RgVrVI0NClZwqA==";
       };
     };
-    "vscode-languageserver-textdocument-1.0.10" = {
+    "vscode-languageserver-textdocument-1.0.11" = {
       name = "vscode-languageserver-textdocument";
       packageName = "vscode-languageserver-textdocument";
-      version = "1.0.10";
+      version = "1.0.11";
       src = fetchurl {
-        url = "https://registry.npmjs.org/vscode-languageserver-textdocument/-/vscode-languageserver-textdocument-1.0.10.tgz";
-        sha512 = "dPA6WqtAQJ/Iopm0Hrj11VvaKxsEcm62jpqyaYbY0xuvUffeWAn77f3VKr2SCsJphSyEw4Fjkjqm2gQ24KQfrA==";
+        url = "https://registry.npmjs.org/vscode-languageserver-textdocument/-/vscode-languageserver-textdocument-1.0.11.tgz";
+        sha512 = "X+8T3GoiwTVlJbicx/sIAF+yuJAqz8VvwJyoMVhwEMoEKE/fkDmrqUgDMyBECcM2A2frVZIUj5HI/ErRXCfOeA==";
       };
     };
-    "vscode-languageserver-types-3.16.0" = {
+    "vscode-languageserver-types-3.17.3" = {
       name = "vscode-languageserver-types";
       packageName = "vscode-languageserver-types";
-      version = "3.16.0";
+      version = "3.17.3";
       src = fetchurl {
-        url = "https://registry.npmjs.org/vscode-languageserver-types/-/vscode-languageserver-types-3.16.0.tgz";
-        sha512 = "k8luDIWJWyenLc5ToFQQMaSrqCHiLwyKPHKPQZ5zz21vM+vIVUSvsRpcbiECH4WR88K2XZqc4ScRcZ7nk/jbeA==";
+        url = "https://registry.npmjs.org/vscode-languageserver-types/-/vscode-languageserver-types-3.17.3.tgz";
+        sha512 = "SYU4z1dL0PyIMd4Vj8YOqFvHu7Hz/enbWtpfnVbJHU4Nd1YNYx8u0ennumc6h48GQNeOLxmwySmnADouT/AuZA==";
       };
     };
-    "vscode-uri-3.0.7" = {
+    "vscode-uri-3.0.8" = {
       name = "vscode-uri";
       packageName = "vscode-uri";
-      version = "3.0.7";
+      version = "3.0.8";
       src = fetchurl {
-        url = "https://registry.npmjs.org/vscode-uri/-/vscode-uri-3.0.7.tgz";
-        sha512 = "eOpPHogvorZRobNqJGhapa0JdwaxpjVvyBp0QIUMRMSf8ZAlqOdEquKuRmw9Qwu0qXtJIWqFtMkmvJjUZmMjVA==";
+        url = "https://registry.npmjs.org/vscode-uri/-/vscode-uri-3.0.8.tgz";
+        sha512 = "AyFQ0EVmsOZOlAnxoFOGOq1SQDWAB7C6aqMGS23svWAllfOaxbuFvcT8D1i8z3Gyn8fraVeZNNmN6e9bxxXkKw==";
       };
     };
-    "wrappy-1.0.2" = {
-      name = "wrappy";
-      packageName = "wrappy";
-      version = "1.0.2";
-      src = fetchurl {
-        url = "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz";
-        sha512 = "l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==";
-      };
-    };
-    "yaml-1.10.2" = {
+    "yaml-2.3.4" = {
       name = "yaml";
       packageName = "yaml";
-      version = "1.10.2";
+      version = "2.3.4";
       src = fetchurl {
-        url = "https://registry.npmjs.org/yaml/-/yaml-1.10.2.tgz";
-        sha512 = "r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==";
+        url = "https://registry.npmjs.org/yaml/-/yaml-2.3.4.tgz";
+        sha512 = "8aAvwVUSHpfEqTQ4w/KMlf3HcRdt50E5ODIQJBw1fQ5RL34xabzxtUlzTXVqc4rkZsPbvrXKWnABCD7kWSmocA==";
       };
     };
   };
@@ -199,33 +208,37 @@ in
   "@yaegassy/coc-ansible" = nodeEnv.buildNodePackage {
     name = "_at_yaegassy_slash_coc-ansible";
     packageName = "@yaegassy/coc-ansible";
-    version = "0.13.6";
+    version = "0.14.2";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@yaegassy/coc-ansible/-/coc-ansible-0.13.6.tgz";
-      sha512 = "F+q8yKxLzRwB16KnMcaeCBH4Yjh8tr/kVwLTHxjUIKuGGDdcjB0EKRMDb6gK6TjbjJgs+zjHOZQplQ39fN9OYA==";
+      url = "https://registry.npmjs.org/@yaegassy/coc-ansible/-/coc-ansible-0.14.2.tgz";
+      sha512 = "bnBrMxJUlTuk2NWlM8LeX9at+9wBReVnnJSMBMQZuGHOfLmdUDWOPnkLAe7P0mVmLRjVJu/cJa6D+5/w9FiKzQ==";
     };
     dependencies = [
-      sources."@ansible/ansible-language-server-1.0.4"
-      sources."@flatten-js/interval-tree-1.0.20"
+      sources."@ansible/ansible-language-server-1.2.1"
+      sources."@flatten-js/interval-tree-1.1.1"
+      sources."antsibull-docs-1.0.0"
       sources."balanced-match-1.0.2"
       sources."brace-expansion-2.0.1"
       sources."fs.realpath-1.0.0"
-      sources."glob-8.1.0"
-      sources."inflight-1.0.6"
-      sources."inherits-2.0.4"
-      sources."ini-3.0.1"
+      sources."glob-9.3.5"
+      sources."ini-4.1.1"
       sources."lodash-4.17.21"
-      sources."minimatch-5.1.6"
-      sources."once-1.4.0"
-      sources."uuid-8.3.2"
-      sources."vscode-jsonrpc-6.0.0"
-      sources."vscode-languageserver-7.0.0"
-      sources."vscode-languageserver-protocol-3.16.0"
-      sources."vscode-languageserver-textdocument-1.0.10"
-      sources."vscode-languageserver-types-3.16.0"
-      sources."vscode-uri-3.0.7"
-      sources."wrappy-1.0.2"
-      sources."yaml-1.10.2"
+      sources."lru-cache-10.0.1"
+      sources."minimatch-8.0.4"
+      sources."minipass-4.2.8"
+      (sources."path-scurry-1.10.1" // {
+        dependencies = [
+          sources."minipass-7.0.4"
+        ];
+      })
+      sources."uuid-9.0.1"
+      sources."vscode-jsonrpc-8.1.0"
+      sources."vscode-languageserver-8.1.0"
+      sources."vscode-languageserver-protocol-3.17.3"
+      sources."vscode-languageserver-textdocument-1.0.11"
+      sources."vscode-languageserver-types-3.17.3"
+      sources."vscode-uri-3.0.8"
+      sources."yaml-2.3.4"
     ];
     buildInputs = globalBuildInputs;
     meta = {
@@ -240,10 +253,10 @@ in
   coc-jedi = nodeEnv.buildNodePackage {
     name = "coc-jedi";
     packageName = "coc-jedi";
-    version = "0.35.0";
+    version = "0.36.1";
     src = fetchurl {
-      url = "https://registry.npmjs.org/coc-jedi/-/coc-jedi-0.35.0.tgz";
-      sha512 = "1FvTB1P+P8D8D8rBCTKLlQFOpMal8HJfVmxNXE6QSM891oD75HMhnN9IL25De0GgTyzbfdSCtbXhxkoos/CWSQ==";
+      url = "https://registry.npmjs.org/coc-jedi/-/coc-jedi-0.36.1.tgz";
+      sha512 = "63PZIDWsymqilCzHsu2ZpWqlsWg+AuG5rgNvEOPTxweo8YLqbNsTyKoLpX5neuXdSnBkyh2QT1r/WgipXn2AAw==";
     };
     buildInputs = globalBuildInputs;
     meta = {
