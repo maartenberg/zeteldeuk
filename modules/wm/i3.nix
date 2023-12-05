@@ -105,6 +105,8 @@
           "${mod}+Shift+n" =
             "exec --no-startup-id ~/.local/bin/rename-current-workspace";
 
+          "${mod}+Tab" = "exec rofi -show window";
+
           "${mod}+Shift+F1" = "exec firefox";
 
           # Mute
