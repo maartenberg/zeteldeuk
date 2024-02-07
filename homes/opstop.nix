@@ -46,7 +46,7 @@
     # programs.git.userEmail is untracked.
 
     xsession.windowManager.i3.x-barmode = "hide";
-    xsession.windowManager.i3.x-trayOutput = "eDP-1-1";
+    xsession.windowManager.i3.x-trayOutput = "primary";
     xsession.windowManager.i3.x-primaryMonitors = [
       "DP-1-1" "DP-1-1-1" "DP-1-1-2" "DP-1-1-3"
       "DP-1-2" "DP-1-2-1" "DP-1-2-2" "DP-1-2-3"
