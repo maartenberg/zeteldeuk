@@ -34,6 +34,30 @@
     }
 
     (lib.mkIf config.programs.autorandr.enable {
+      programs.autorandr.hooks.postswitch.ensureprimary = ''
+        /usr/bin/env python3 - <<EOF
+        import os
+        import subprocess
+        import sys
+
+        if __name__ == "__main__":
+            xrandr = subprocess.run(["xrandr"], capture_output=True, check=True, text=True)
+
+            if "primary" in xrandr.stdout:
+                sys.exit(0)
+
+            monitors = os.environ.get("AUTORANDR_MONITORS", "").split(":")
+
+            if len(monitors) == 0:
+                sys.exit(0)
+
+            print(f"Monitors: {monitors}")
+            subprocess.run(
+                ["xrandr", "--output", monitors[0], "--primary"],
+                check=True,
+            )
+        EOF
+      '';
       home.packages = [ pkgs.arandr ];
 
       home.file.autoautorandr = {
