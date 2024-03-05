@@ -63,8 +63,8 @@
 
         window.commands = [
           {
-            criteria = { class = "Firefox"; };
-            command = "layout tabbed, border none";
+            criteria = { class = "firefox"; window_role = "alert|notification"; };
+            command = "floating enable";
           }
           {
             criteria = { class = "discord"; };
@@ -217,6 +217,10 @@
           };
         }];
       };
+
+      extraConfig = ''
+        no_focus [class="firefox" window_role="alert|notification"]
+      '';
     };
 
     programs.i3status.enable = true;
