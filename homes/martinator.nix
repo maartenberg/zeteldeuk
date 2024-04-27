@@ -14,46 +14,50 @@
   config = {
     home.packages = with pkgs; [
       bitwarden
-      cachix
       discord
-      droidcam
       evince
       gimp
       gnome.file-roller
-      google-chrome
-      htop
       inkscape
-      # jetbrains.ruby-mine
       keepassxc
       libreoffice-qt
       mpv
-      niv
       obs-studio
       pavucontrol
       pcmanfm
       recursive
-      scribus
-      signal-desktop
-      sl
       spotify
-      tdesktop
-      texlive.combined.scheme-full
-      thunderbird
+      # droidcam
+      # google-chrome
+      # jetbrains.ruby-mine
+      # scribus
+      # signal-desktop
+      # tdesktop
+      # texlive.combined.scheme-full
+      # thunderbird
       # virt-manager
 
-      libnotify
-      wayland
+      cachix
+      curl
+      devenv
       feh
-      ripgrep
+      file
+      htop
+      jless
+      jq
+      libnotify
+      niv
+      nix-output-monitor
+      nix-tree
       openssl
       pkg-config
-      xclip
-      jq
-      curl
-      wget
+      ripgrep
+      sl
       tree
       unzip
-      file
+      wayland  # ???
+      wget
+      xclip
     ];
 
     xsession.windowManager.i3.x-primaryMonitors = [ "DisplayPort-0" ];
@@ -118,11 +122,11 @@
     programs.ssh.enable = true;
     # programs.ssh.matchBlocks is untracked
 
-    home.file.".latexmkrc" = {
-      text = ''
-        $pdf_previewer = 'start evince';
-      '';
-    };
+    # home.file.".latexmkrc" = {
+    #   text = ''
+    #     $pdf_previewer = 'start evince';
+    #   '';
+    # };
 
     services.blueman-applet.enable = true;
 
