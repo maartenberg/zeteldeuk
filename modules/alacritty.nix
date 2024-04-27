@@ -27,10 +27,10 @@
           multiplier = 3;
         };
 
-        draw_bold_text_with_bright_colors = true;
-
         # Use Numix Dark colors for the terminal.
         colors = {
+          draw_bold_text_with_bright_colors = true;
+
           primary.background = "0x282828";
           primary.foreground = "0xeeeeee";
 

@@ -137,7 +137,7 @@
         inoremap <C-BS> <C-W>
       '';
 
-      extraPackages = [ pkgs.nixfmt ];
+      extraPackages = [ pkgs.nixfmt-rfc-style ];
     };
 
     home.file.ideavimrc = {

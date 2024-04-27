@@ -201,7 +201,7 @@
 
       {
         plugin = let p = extraNodePackages."coc-jedi";
-        in pkgs.vimUtils.buildVimPluginFrom2Nix {
+        in pkgs.vimUtils.buildVimPlugin {
           pname = p.packageName;
           version = p.version;
           src = "${p}/lib/node_modules/${p.packageName}";
@@ -209,7 +209,7 @@
       }
       {
         plugin = let p = extraNodePackages."@yaegassy/coc-ansible";
-        in pkgs.vimUtils.buildVimPluginFrom2Nix {
+        in pkgs.vimUtils.buildVimPlugin {
           pname = "coc-ansible";
           version = p.version;
           src = "${p}/lib/node_modules/${p.packageName}";
