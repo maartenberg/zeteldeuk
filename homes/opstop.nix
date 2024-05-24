@@ -20,6 +20,7 @@
       pavucontrol
       signal-desktop
       spotify
+      uvcdynctrl
 
       recursive
 
