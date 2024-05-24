@@ -91,6 +91,10 @@
         command = "/usr/bin/ibus exit";
         notification = false;
       }
+      {
+        command = "/usr/bin/workrave";
+        notification = false;
+      }
     ];
 
     systemd.user.targets = {
