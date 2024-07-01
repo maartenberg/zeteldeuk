@@ -8,6 +8,7 @@
 
     home.sessionVariables.EDITOR = "nvim";
     home.sessionVariables.VISUAL = "nvim";
+    home.sessionVariables.MANPAGER = "nvim +Man!";
 
     programs.neovim = {
       enable = true;
