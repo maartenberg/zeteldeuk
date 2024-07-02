@@ -99,6 +99,17 @@
             nnoremap <leader>fh <cmd>Telescope help_tags<cr>
           '';
         }
+
+        {
+          plugin = openingh-nvim;
+          config = ''
+            nmenu <silent> PopUp.Open\ branch\ in\ GitHub <Cmd>:OpenInGHFileLines<CR>
+            nmenu <silent> PopUp.Open\ commit\ in\ GitHub <Cmd>:OpenInGHFileLines!<CR>
+
+            vmenu <silent> PopUp.Open\ branch\ in\ GitHub <Cmd>:'<,'>OpenInGHFileLines<CR>
+            vmenu <silent> PopUp.Open\ commit\ in\ GitHub <Cmd>:'<,'>OpenInGHFileLines!<CR>
+          '';
+        }
       ];
       extraConfig = ''
         " === Options ===
@@ -136,6 +147,9 @@
 
         " C-Backspace == ^W
         inoremap <C-BS> <C-W>
+
+        aunmenu PopUp.-1-
+        aunmenu PopUp.How-to\ disable\ mouse
       '';
 
       extraPackages = [ pkgs.nixfmt-rfc-style ];
