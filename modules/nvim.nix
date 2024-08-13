@@ -124,6 +124,8 @@
 
         set cursorline
 
+        set grepprg=rg\ --vimgrep
+
         " === Autocmds ===
         " Yaml: 2 spaces for indentation
         autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 expandtab
