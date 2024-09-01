@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   config = {
@@ -9,7 +9,7 @@
       nix-tree
     ];
 
-    nix.package = pkgs.nix;
+    nix.package = lib.mkDefault pkgs.nix;
     nix.settings = {
       experimental-features = [ "flakes" "nix-command" ];
       max-jobs = "auto";
