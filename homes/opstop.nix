@@ -130,6 +130,7 @@
     home.sessionPath = [ "$HOME/.cargo/bin" ];
 
     programs.atuin.enable = true;
+    programs.atuin.flags = ["--disable-up-arrow"];
 
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
