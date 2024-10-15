@@ -100,7 +100,7 @@
                 try:
                   line = msg.stdout.readline()
                   if not SUSPENDED:
-                    subprocess.run(["autorandr", "-c", "--default", "horizontal"])
+                    subprocess.run(["autorandr", "-c", "--match-edid", "--default", "horizontal"])
                 except EOFError:
                   break
 
