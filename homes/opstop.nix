@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, nixpkgs, ... }:
 
 {
   imports = [
@@ -131,6 +131,10 @@
 
     programs.atuin.enable = true;
     programs.atuin.flags = ["--disable-up-arrow"];
+
+    nix.channels = {
+      inherit nixpkgs;
+    };
 
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
