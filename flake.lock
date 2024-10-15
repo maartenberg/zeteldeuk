@@ -128,7 +128,7 @@
     "untracked-opstop": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-X8tGpbPWTupyniV/wlBQyl/tC8kZpbC38Gu8qPkjWoY=",
+        "narHash": "sha256-3WzrRImenm59MqPTABOaC1hn3OafPDq6z/XbizXp2O4=",
         "type": "file",
         "url": "file:///home/maarten/.config/nixpkgs/untracked-opstop.nix"
       },
