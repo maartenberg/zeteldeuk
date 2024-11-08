@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./nvim/coc.nix ./nvim/firenvim.nix ./nvim/python-syntax.nix ];
+  imports = [ ./nvim/lsp.nix ./nvim/firenvim.nix ./nvim/python-syntax.nix ];
 
   config = {
     firenvim.enable = true;
