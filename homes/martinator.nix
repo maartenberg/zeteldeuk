@@ -16,8 +16,8 @@
       bitwarden
       discord
       evince
+      file-roller
       gimp
-      gnome.file-roller
       inkscape
       keepassxc
       libreoffice-qt
