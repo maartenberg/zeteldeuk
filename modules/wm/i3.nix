@@ -110,14 +110,14 @@
           "${mod}+Shift+F1" = "exec firefox";
 
           # Mute
-          "XF86AudioMute"               = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
-          "${mod}+Shift+F9"             = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
+          "XF86AudioMute"               = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle";
+          "${mod}+Shift+F9"             = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle";
           # Vol up
-          "XF86AudioRaiseVolume"        = "exec pactl set-sink-volume @DEFAULT_SINK@ +2%";
-          "${mod}+Shift+F8"             = "exec pactl set-sink-volume @DEFAULT_SINK@ +2%";
+          "XF86AudioRaiseVolume"        = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ +2%";
+          "${mod}+Shift+F8"             = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ +2%";
           # Vol down
-          "XF86AudioLowerVolume"        = "exec pactl set-sink-volume @DEFAULT_SINK@ -2%";
-          "${mod}+Shift+F7"             = "exec pactl set-sink-volume @DEFAULT_SINK@ -2%";
+          "XF86AudioLowerVolume"        = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ -2%";
+          "${mod}+Shift+F7"             = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ -2%";
           # Play/pause
           "XF86AudioPlay"               = "exec ${pkgs.playerctl}/bin/playerctl -i firefox play-pause";
           "${mod}+XF86AudioMute"        = "exec ${pkgs.playerctl}/bin/playerctl -i firefox play-pause";
