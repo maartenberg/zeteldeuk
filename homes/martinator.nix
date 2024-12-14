@@ -130,6 +130,12 @@
 
     services.blueman-applet.enable = true;
 
+    programs.direnv.enable = true;
+
+    programs.direnv.stdlib = ''
+      export PS1="%F{8}[%F{3}direnv: $(basename -- "$DIRENV_DIR")%F{8}]%f ''${PS1}"
+    '';
+
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
 
