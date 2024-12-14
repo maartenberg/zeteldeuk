@@ -62,7 +62,7 @@
 
         # Misc.
         mouse.hide_when_typing = true;
-        live_config_reload = true;
+        general.live_config_reload = true;
       };
     };
   };
