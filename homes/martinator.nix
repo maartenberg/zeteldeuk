@@ -36,6 +36,7 @@
       # texlive.combined.scheme-full
       # thunderbird
       # virt-manager
+      _1password-gui
 
       cachix
       curl
