@@ -70,9 +70,6 @@
 
     programs.firefox.enable = true;
 
-    services.pulseeffects.enable = true;
-    services.pulseeffects.package = pkgs.pulseeffects-legacy;
-
     services.syncthing.enable = true;
     services.syncthing.tray.enable = true;
     services.syncthing.tray.command = "syncthingtray --wait";
