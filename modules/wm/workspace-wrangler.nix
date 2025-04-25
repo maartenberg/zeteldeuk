@@ -81,7 +81,7 @@
             if SUSPENDED:
               subprocess.run(["notify-send", "autoautorandr suspended."])
             else:
-              subprocess.run(["autorandr", "-c", "--default", "horizontal"])
+              subprocess.run(["autorandr", "-c", "--match-edid", "--default", "horizontal"])
               subprocess.run(["notify-send", "autoautorandr resumed."])
 
 
