@@ -110,6 +110,8 @@
             vmenu <silent> PopUp.Open\ commit\ in\ GitHub <Cmd>:'<,'>OpenInGHFileLines!<CR>
           '';
         }
+
+        vim-caddyfile
       ];
       extraConfig = ''
         " === Options ===
