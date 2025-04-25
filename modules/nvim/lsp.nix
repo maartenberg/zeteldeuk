@@ -11,6 +11,7 @@
         pkgs.ansible-language-server
         pkgs.pyright
         pkgs.terraform-ls
+        pkgs.haskell-language-server
         # pkgs.yamllint
       ];
 
@@ -26,6 +27,9 @@
 
         -- Terraform
         require'lspconfig'.terraformls.setup{}
+
+        -- Haskell
+        require'lspconfig'.hls.setup{}
 
         vim.api.nvim_create_autocmd({"BufWritePre"}, {
           pattern = {"*.tf", "*.tfvars"},
@@ -54,11 +58,5 @@
         end
       '';
     };
-
-    # programs.neovim.extraPackages = [
-    #   pkgs.haskell-language-server
-    #   pkgs.yamllint
-    #   pkgs.terraform-ls
-    # ];
   };
 }
