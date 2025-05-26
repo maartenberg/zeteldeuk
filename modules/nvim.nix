@@ -145,9 +145,6 @@
         " Map backspace to removing search highlight
         nnoremap <silent> <BS> :nohlsearch<CR>
 
-        " Toggle paste mode
-        set pastetoggle=<F2>
-
         " Toggle spellcheck
         map z! :set spell!<CR>
 
