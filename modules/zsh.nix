@@ -53,7 +53,7 @@
         ];
       };
 
-      initExtra = ''
+      initContent = ''
         function direnv_prompt_info() {
           if [[ -z ''${DIRENV_DIR} ]]; then
             return 0
