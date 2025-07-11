@@ -84,10 +84,6 @@
         notification = false;
       }
       {
-        command = "/bin/systemctl --user start i3-graphical-session.target";
-        notification = false;
-      }
-      {
         command = "/usr/bin/ibus exit";
         notification = false;
       }
@@ -96,15 +92,6 @@
         notification = false;
       }
     ];
-
-    systemd.user.targets = {
-      i3-graphical-session = {
-        Unit = {
-          Description = "i3 graphical session";
-          BindsTo = "graphical-session.target";
-        };
-      };
-    };
 
     services.random-background = {
       enable = true;
