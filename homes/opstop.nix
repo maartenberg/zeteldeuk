@@ -21,6 +21,7 @@
       signal-desktop
       spotify
       uvcdynctrl
+      xdg-terminal-exec
 
       recursive
 
