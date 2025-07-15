@@ -3,7 +3,7 @@
     "consul-tunnels": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-iN5/y0zQH1PeFPifuAJT3bU/1TnXyCfDHoWBnQMQIYg=",
+        "narHash": "sha256-ZTzL12Hqilr4gZun28Xev2xhk7SMMCezI02LrAZ0ys0=",
         "type": "file",
         "url": "file:///home/maarten/.config/nixpkgs/consul-tunnels.nix"
       },
@@ -87,11 +87,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1748186667,
-        "narHash": "sha256-UQubDNIQ/Z42R8tPCIpY+BOhlxO8t8ZojwC9o2FW3c8=",
+        "lastModified": 1752446735,
+        "narHash": "sha256-Nz2vtUEaRB/UjvPfuhHpez060P/4mvGpXW4JCDIboA4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "bdac72d387dca7f836f6ef1fe547755fb0e9df61",
+        "rev": "a421ac6595024edcfbb1ef950a3712b89161c359",
         "type": "github"
       },
       "original": {
