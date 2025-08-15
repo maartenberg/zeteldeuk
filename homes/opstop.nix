@@ -120,6 +120,8 @@
     programs.atuin.enable = true;
     programs.atuin.flags = ["--disable-up-arrow"];
 
+    services.snixembed.enable = true;
+
     nix.channels = {
       inherit nixpkgs;
     };
