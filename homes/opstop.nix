@@ -66,6 +66,8 @@
       "XDG_SESSION_ID"
     ];
 
+    systemd.user.sessionVariables.SSH_AUTH_SOCK = "~/.1password/agent.sock";
+
     programs.i3status.modules."battery all".enable = pkgs.lib.mkForce true;
     programs.i3status.modules."wireless _first_".enable = pkgs.lib.mkForce true;
 

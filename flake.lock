@@ -3,7 +3,7 @@
     "consul-tunnels": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-ZTzL12Hqilr4gZun28Xev2xhk7SMMCezI02LrAZ0ys0=",
+        "narHash": "sha256-T4fbecUhqstP5FVgeOwZCATdtBYItcodE7kfP8f7AZc=",
         "type": "file",
         "url": "file:///home/maarten/.config/nixpkgs/consul-tunnels.nix"
       },

@@ -46,7 +46,7 @@
           "history-substring-search"
           # Auto-start SSH-agent.
           # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
-          "ssh-agent"
+          # "ssh-agent"
           # Print duration of long-running commands automatically.
           # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/timer
           "timer"
