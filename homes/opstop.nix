@@ -82,6 +82,10 @@
 
     xsession.windowManager.i3.config.startup = [
       {
+        command = "/bin/systemctl --user start hm-graphical-session.target";
+        notification = false;
+      }
+      {
         command =
           "/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1";
         notification = false;
