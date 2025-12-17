@@ -23,13 +23,13 @@
         -- require'lspconfig'.ansiblels.setup{}
 
         -- Python
-        require'lspconfig'.pyright.setup{}
+        vim.lsp.enable('pyright')
 
         -- Terraform
-        require'lspconfig'.terraformls.setup{}
+        vim.lsp.enable('terraformls')
 
         -- Haskell
-        require'lspconfig'.hls.setup{}
+        vim.lsp.enable('hls')
 
         vim.api.nvim_create_autocmd({"BufWritePre"}, {
           pattern = {"*.tf", "*.tfvars"},
