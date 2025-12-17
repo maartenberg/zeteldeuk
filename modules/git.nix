@@ -6,22 +6,24 @@
       git-autofixup
     ];
 
+    programs.delta = {
+      enable = true;
+      enableGitIntegration = true;
+    };
+
     programs.git = {
       enable = true;
-      package = pkgs.gitAndTools.gitFull;
+      package = pkgs.gitFull;
 
-      delta.enable = true;
       lfs.enable = true;
 
-      userName = "Maarten van den Berg";
+      settings = {
+        user.name = "Maarten van den Berg";
+        alias = {
+          # https://www.erikschierboom.com/2020/02/17/cleaning-up-local-git-branches-deleted-on-a-remote/
+          prune-gone = ''! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == "[gone]" {print $1}' | xargs -r git branch -D'';
+        };
 
-      aliases = {
-        # https://www.erikschierboom.com/2020/02/17/cleaning-up-local-git-branches-deleted-on-a-remote/
-        prune-gone = ''
-          ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == "[gone]" {print $1}' | xargs -r git branch -D'';
-      };
-
-      extraConfig = {
         # Implicitly pass `-n` to all `git grep`s
         grep.linenumber = true;
 

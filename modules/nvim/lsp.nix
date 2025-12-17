@@ -8,7 +8,7 @@
       ];
 
       extraPackages = [
-        pkgs.ansible-language-server
+        # pkgs.ansible-language-server removed
         pkgs.pyright
         pkgs.terraform-ls
         pkgs.haskell-language-server
@@ -20,7 +20,7 @@
 
       extraLuaConfig = ''
         -- Ansible
-        require'lspconfig'.ansiblels.setup{}
+        -- require'lspconfig'.ansiblels.setup{}
 
         -- Python
         require'lspconfig'.pyright.setup{}
