@@ -8,10 +8,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixGL = {
-      url = "github:guibou/nixGL";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     untracked-martinator = {
       type = "file";
       url = "file:///home/maarten/.config/nixpkgs/untracked-martinator.nix";
@@ -45,9 +41,6 @@
         inherit system;
         config.allowUnfree = true;
       };
-      nixGL = import inputs.nixGL {
-        inherit pkgs;
-      };
     in {
       homeConfigurations.martinator = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
@@ -67,9 +60,6 @@
           ./homes/opstop.nix
           (import inputs.untracked-opstop)
           (import inputs.consul-tunnels)
-          {
-            programs.nixGL.binary = "nixGL";
-          }
         ];
 
         extraSpecialArgs = inputs;
@@ -81,13 +71,6 @@
         modules = [
           ./homes/t480.nix
           (import inputs.untracked-t480)
-          {
-            home.packages = [
-              nixGL.nixGLIntel
-              nixGL.nixVulkanIntel
-            ];
-            programs.nixGL.binary = "nixGLIntel";
-          }
         ];
 
         extraSpecialArgs = inputs;
