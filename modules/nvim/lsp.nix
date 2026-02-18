@@ -18,7 +18,7 @@
       extraPython3Packages = ps: [
       ];
 
-      extraLuaConfig = ''
+      initLua = ''
         -- Ansible
         -- require'lspconfig'.ansiblels.setup{}
 
