@@ -19,7 +19,7 @@
         ## CONFIGURATION ##############################################################
 
         # Options to pass to i3lock
-        i3lock_options="--color=008080 --pointer=win"
+        i3lock_options="--color=008080 --pointer=default"
 
         # Run before starting the locker
         pre_lock() {

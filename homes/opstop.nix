@@ -11,6 +11,7 @@
     ../modules/wm.nix
     ../modules/wm/workspace-wrangler.nix
     ../modules/zsh.nix
+    ../modules/wm/cursor.nix
     # ~/.config/nixpkgs/home-untracked.nix
   ];
 
