@@ -23,6 +23,10 @@
       uvcdynctrl
       xdg-terminal-exec
 
+      ijq
+      jless
+      xan
+
       recursive
 
       black
