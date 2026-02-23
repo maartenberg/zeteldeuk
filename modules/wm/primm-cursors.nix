@@ -5,12 +5,13 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "primm-cursors";
-  version = "2024-05-08";
+  version = "2025-09-13";
 
   src = fetchzip {
-    url = "https://files.primm.gay/extras/cursors/Wii/Linux%20Cursors.7z";
+    url = "https://files.primm.gay/extras/cursors/Wii/Linux%20Cursors%20Scalable.7z";
     nativeBuildInputs = [p7zip];
-    sha256 = "sha256-Rs6u5FfyRISkmltaTxgyPlEq+WQfZy7s0940TIK3rUQ=";
+    sha256 = "sha256-88K6dSy3IoN7ztESuUhJC9OJ2StX8hp6oIDDD4JKSAE=";
+    stripRoot = false;
   };
 
   buildPhase = "true";
