@@ -99,6 +99,7 @@
             nnoremap <leader>fh <cmd>Telescope help_tags<cr>
           '';
         }
+        plenary-nvim
 
         {
           plugin = openingh-nvim;
