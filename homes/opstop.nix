@@ -33,6 +33,7 @@
       black
       feh
       gron
+      python3.pkgs.jsondiff
       jq
       nix-diff
       nix-tree
