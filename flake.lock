@@ -79,7 +79,7 @@
     "untracked-martinator": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-Ao96NBauEpAPVcj2uAi446DOTr5pmQIqEAwo9boqA48=",
+        "narHash": "sha256-XvezvlXDGsKZ0D8CKTqAoxdkZNUemi2p14w3rEm3qwg=",
         "type": "file",
         "url": "file:///home/maarten/.config/nixpkgs/untracked-martinator.nix"
       },

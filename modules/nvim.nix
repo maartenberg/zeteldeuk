@@ -156,7 +156,7 @@
         aunmenu PopUp.How-to\ disable\ mouse
       '';
 
-      extraPackages = [ pkgs.nixfmt-rfc-style ];
+      extraPackages = [ pkgs.nixfmt ];
     };
 
     home.file.ideavimrc = {
