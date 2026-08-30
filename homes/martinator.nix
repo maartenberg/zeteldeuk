@@ -13,7 +13,6 @@
 
   config = {
     home.packages = with pkgs; [
-      bitwarden
       discord
       evince
       file-roller
