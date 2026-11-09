@@ -15,6 +15,7 @@ in {
         src = firenvim;
       };
 
+      type = "viml";
       config = ''
 		" Bind C-Backspace to C-W
 		inoremap <C-BS> <C-W>

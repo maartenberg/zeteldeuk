@@ -10,9 +10,10 @@
     programs.fzf = {
       enable = true;
 
-      changeDirWidgetCommand = "fd --type d";
+      historyWidget.command = "";
+      changeDirWidget.command = "fd --type d";
       defaultCommand = "fd --type f";
-      fileWidgetCommand = "fd --type f";
+      fileWidget.command = "fd --type f";
     };
 
     home.packages = with pkgs; [

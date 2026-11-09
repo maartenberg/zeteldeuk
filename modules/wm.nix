@@ -11,8 +11,8 @@
 
     programs.rofi.enable = true;
     programs.rofi.theme = "gruvbox-dark";
-    programs.rofi.font = "Rec Mono Duotone 14";
-    programs.rofi.extraConfig.run-command = "/usr/bin/env --unset=GDK_PIXBUF_MODULE_FILE {cmd}";
+    programs.rofi.settings.font = "Rec Mono Duotone 14";
+    programs.rofi.settings.run-command = "/usr/bin/env --unset=GDK_PIXBUF_MODULE_FILE {cmd}";
 
     services.pasystray.enable = true;
 
@@ -43,6 +43,7 @@
       gtk3.extraConfig = {
         gtk-application-prefer-dark-theme = 1;
       };
+      gtk4.theme = config.gtk.theme;
     };
   };
 }

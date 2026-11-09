@@ -12,12 +12,15 @@
 
     programs.neovim = {
       enable = true;
+      withRuby = false;
+      withPython3 = false;
 
       plugins = with pkgs.vimPlugins; [
         editorconfig-vim
 
         {
           plugin = nerdtree;
+          type = "viml";
           config = ''
             noremap <silent> <leader>n :NERDTreeToggle<CR>
             noremap <silent> <leader>f :NERDTreeFind<CR>
@@ -39,6 +42,7 @@
 
         {
           plugin = gruvbox-community;
+          type = "viml";
           config = ''
             set termguicolors
             let g:gruvbox_contrast_dark = 'medium'
@@ -50,6 +54,7 @@
 
         {
           plugin = vimtex;
+          type = "viml";
           config = ''
             let g:tex_comment_nospell=1
             let g:vimtex_compiler_latexmk = {
@@ -70,6 +75,7 @@
         vim-pandoc
         {
           plugin = vim-pandoc-syntax;
+          type = "viml";
           config = ''
             let g:pandoc#syntax#codeblocks#embeds#langs = ["python", "bash=sh", "haskell"]
           '';
@@ -78,6 +84,7 @@
 
         {
           plugin = vim-better-whitespace;
+          type = "viml";
           config = ''
             let g:strip_whitespace_on_save=1
             let g:strip_whitelines_at_eof=1
@@ -92,6 +99,7 @@
 
         {
           plugin = telescope-nvim;
+          type = "viml";
           config = ''
             nnoremap <leader>ff <cmd>Telescope find_files<cr>
             nnoremap <leader>fg <cmd>Telescope live_grep<cr>
@@ -103,6 +111,7 @@
 
         {
           plugin = openingh-nvim;
+          type = "viml";
           config = ''
             nmenu <silent> PopUp.Open\ branch\ in\ GitHub <Cmd>:OpenInGHFileLines<CR>
             nmenu <silent> PopUp.Open\ commit\ in\ GitHub <Cmd>:OpenInGHFileLines!<CR>
