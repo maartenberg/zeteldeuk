@@ -29,7 +29,7 @@
       flake = false;
     };
     firenvim = {
-      url = "github:glacambre/firenvim/0.2.16";
+      url = "github:glacambre/firenvim/0.2.17";
       flake = false;
     };
   };

@@ -15,16 +15,16 @@
     "firenvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1714315333,
-        "narHash": "sha256-fBV+lIquhuNDKu3JIZG39vhxTMyTdL+2+zmINQhJRDk=",
+        "lastModified": 1778227005,
+        "narHash": "sha256-lz104GH53X82zvZQDKuZm03QXlCP61aswnyWVfFAz4A=",
         "owner": "glacambre",
         "repo": "firenvim",
-        "rev": "03ba12a5a92a02d171005775a8150998c4060a74",
+        "rev": "2f2ee2c20dbd90f1886276b79c71c127039cf229",
         "type": "github"
       },
       "original": {
         "owner": "glacambre",
-        "ref": "0.2.16",
+        "ref": "0.2.17",
         "repo": "firenvim",
         "type": "github"
       }
