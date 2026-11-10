@@ -8,8 +8,8 @@
     ../modules/non-nixos.nix
     ../modules/nvim.nix
     ../modules/tmux.nix
-    ../modules/wm.nix
-    ../modules/wm/workspace-wrangler.nix
+    # ../modules/wm.nix
+    # ../modules/wm/workspace-wrangler.nix
     ../modules/zsh.nix
     ../modules/wm/cursor.nix
     # ~/.config/nixpkgs/home-untracked.nix
@@ -19,8 +19,8 @@
     home.packages = with pkgs; [
       mpv
       pavucontrol
-      signal-desktop
-      spotify
+      # signal-desktop
+      # spotify
       uvcdynctrl
       xdg-terminal-exec
 
@@ -31,7 +31,7 @@
       recursive
 
       black
-      feh
+      # feh
       gron
       python3.pkgs.jsondiff
       jq
@@ -42,7 +42,7 @@
       playerctl
       ripgrep
       tree
-      xclip
+      # xclip
     ];
 
     programs.zsh.shellAliases = {
@@ -53,33 +53,33 @@
 
     # programs.git.userEmail is untracked.
 
-    xsession.windowManager.i3.x-barmode = "hide";
-    xsession.windowManager.i3.x-trayOutput = "primary";
-    xsession.windowManager.i3.x-primaryMonitors = [
-      "DP-1" "DP-1-1" "DP-1-2" "DP-1-3"
-      "DP-2" "DP-2-1" "DP-2-2" "DP-2-3"
-      "DP-3" "DP-3-1" "DP-3-2" "DP-3-3"
-    ];
-    xsession.windowManager.i3.x-secondaryMonitor = "eDP-1";
+    # xsession.windowManager.i3.x-barmode = "hide";
+    # xsession.windowManager.i3.x-trayOutput = "primary";
+    # xsession.windowManager.i3.x-primaryMonitors = [
+    #   "DP-1" "DP-1-1" "DP-1-2" "DP-1-3"
+    #   "DP-2" "DP-2-1" "DP-2-2" "DP-2-3"
+    #   "DP-3" "DP-3-1" "DP-3-2" "DP-3-3"
+    # ];
+    # xsession.windowManager.i3.x-secondaryMonitor = "eDP-1";
 
     # Ubuntu 22.04 does not set SSH_AUTH_SOCK on login, so don't import-environment it
-    xsession.importedVariables = pkgs.lib.mkForce [
-      "DBUS_SESSION_BUS_ADDRESS"
-      "DISPLAY"
-      "XAUTHORITY"
-      "XDG_DATA_DIRS"
-      "XDG_RUNTIME_DIR"
-      "XDG_SESSION_ID"
-    ];
+    # xsession.importedVariables = pkgs.lib.mkForce [
+    #   "DBUS_SESSION_BUS_ADDRESS"
+    #   "DISPLAY"
+    #   "XAUTHORITY"
+    #   "XDG_DATA_DIRS"
+    #   "XDG_RUNTIME_DIR"
+    #   "XDG_SESSION_ID"
+    # ];
 
     systemd.user.sessionVariables.SSH_AUTH_SOCK = "/home/maarten/.1password/agent.sock";
 
     programs.i3status.modules."battery all".enable = pkgs.lib.mkForce true;
     programs.i3status.modules."wireless _first_".enable = pkgs.lib.mkForce true;
 
-    programs.autorandr.enable = true;
+    # programs.autorandr.enable = true;
 
-    services.picom.enable = pkgs.lib.mkForce false;
+    # services.picom.enable = pkgs.lib.mkForce false;
 
     services.network-manager-applet.enable = true;
 
@@ -106,12 +106,12 @@
       }
     ];
 
-    services.random-background = {
-      enable = true;
-      enableXinerama = true;
-      imageDirectory = "%h/Pictures/Wallpapers";
-      interval = "15m";
-    };
+    # services.random-background = {
+    #   enable = true;
+    #   enableXinerama = true;
+    #   imageDirectory = "%h/Pictures/Wallpapers";
+    #   interval = "15m";
+    # };
 
     programs.neovim.plugins = [
       {
@@ -133,7 +133,7 @@
     programs.atuin.enable = true;
     programs.atuin.flags = ["--disable-up-arrow"];
 
-    services.snixembed.enable = true;
+    # services.snixembed.enable = true;
 
     nix.channels = {
       inherit nixpkgs;
