@@ -8,9 +8,9 @@ stdenvNoCC.mkDerivation {
   version = "2025-09-13";
 
   src = fetchzip {
-    url = "https://files.primm.gay/extras/cursors/Wii/Linux%20Cursors%20Scalable.7z";
+    url = "https://files.primm.gay/extras/cursors/Wii/Linux%20Cursors%20Scalabler.7z";
     nativeBuildInputs = [p7zip];
-    sha256 = "sha256-88K6dSy3IoN7ztESuUhJC9OJ2StX8hp6oIDDD4JKSAE=";
+    sha256 = "sha256-EDzW/z8TuUuSNvkS4tmkKHx3eIsX22bl+flO0VvoFFE=";
     stripRoot = false;
   };
 
